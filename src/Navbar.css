@@ -12,7 +12,7 @@
 .btn-primary:hover {
     background-color: #1e3866 !important;
     transform: translateY(-3px);
-}
+} 
 
 .text-primary {
     color: #284c8a !important;
@@ -27,11 +27,11 @@
     background-color: #284c8a !important;
     color: #fff !important;
 }
-.nav-item {
+.collapse .nav-item {
     position: relative;
 }
 
-.nav-link::after {
+.collapse .nav-link::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -43,8 +43,8 @@
     transform: translateX(-50%);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
+.collapse .nav-link:hover::after,
+.collapse .nav-link.active::after {
     width: 100%;
 }
  .active {
