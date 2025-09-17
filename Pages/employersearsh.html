@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Search Results</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  <link href="../styles/employersearsh.css" rel="stylesheet">
+  
+</head>
+<body class="">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand me-auto" href="#">
+          <img src="../src/logo.png" alt="Logo" height="50" width="100" />
+        </a>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="./Employer Dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./PostJob.html">Post Job</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="./manageJobs.html">Manage Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./employersearsh.html">Find Candidates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Interviews</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center gap-3 ms-lg-auto">
+          <div class="position-relative"><i class="bi bi-bell fs-5"></i></div>
+          <img
+            src="https://i.pravatar.cc/40?img=12"
+            class="rounded-circle"
+            width="36"
+            height="36"
+            alt="avatar"
+          />
+        </div>
+      </div>
+    </nav>
+<main class="flex-grow-1">
+  <div class="container-fluid my-4">
+    <div class="row">
+      
+      <!-- Sidebar Filters -->
+       <div class="col-md-4 col-lg-3 mb-3">
+       <div class="card shadow-sm rounded-4 filters-card filters bg-white border rounded-3 p-4">
+          <div class="card-body">
+            
+            <!-- Skills -->
+            <div class="mb-3">
+              <label class="form-label">Skills</label>
+              <div class="form-check"><input class="form-check-input" type="checkbox"> React</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox"> Node.js</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox"> AWS</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox"> Marketing Strategy</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox"> Data Science</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox"> Cloud Computing</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox"> Project Management</div>
+            </div>
+
+            <!-- Experience Level -->
+            <div class="mb-3">
+              <label class="form-label">Experience Level</label>
+              <select class="form-select">
+                <option>Select experience</option>
+                <option>0-2 years</option>
+                <option>3-5 years</option>
+                <option>5+ years</option>
+              </select>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-3">
+              <label class="form-label">Education</label>
+              <select class="form-select">
+                <option>Select education</option>
+                <option>Bachelor</option>
+                <option>Master</option>
+                <option>PhD</option>
+              </select>
+            </div>
+
+            <!-- Location -->
+            <div class="mb-3">
+              <label class="form-label">Location</label>
+              <input type="text" class="form-control" placeholder="e.g., Remote, NY">
+            </div>
+
+            <!-- Availability -->
+            <div class="mb-3 form-check">
+              <input class="form-check-input" type="checkbox" id="availability">
+              <label class="form-check-label" for="availability">Immediately Available</label>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-grid gap-2">
+  <button class="btn btn-primary">Apply Filters</button>
+  <button class="btn btn-fade-primary">Clear Filters</button>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidate Results -->
+      <div class="col-md-9 col-lg-9">
+         <h4 class="mb-4">Candidate Search Results</h4>
+        
+      <div class="row g-3">
+       
+         <!-- Candidate Card -->
+        
+
+  <!-- Alice Johnson -->
+  <div class="col-sm-6 col-md-4 col-lg-3">
+    <div class="card p-3 text-center rounded-4 shadow-sm h-100  d-flex flex-column justify-content-between">
+      <img src="../imgs/employersearch-imgs/Selection.png" class="rounded-circle mx-auto d-block" width="80" height="80" style="object-fit:cover;" alt="Profile">
+      <h6 class="mt-2 mb-1">Alice Johnson</h6>
+      <p class="text-muted small mb-1">Senior Product Manager</p>
+      <p class="text-muted small mb-2">8 years of experience</p>
+      <div>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Product Strategy</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Roadmapping</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Agile</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">UI/UX</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Market Analysis</span>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-fade-primary btn-sm">View Profile</button>
+        <button class="btn btn-primary btn-sm">Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bob Williams -->
+   <div class="col-sm-6 col-md-4 col-lg-3">
+     <div class="card p-3 text-center rounded-4 shadow-sm h-100  d-flex flex-column justify-content-between">
+      <img src="../imgs/employersearch-imgs/Selection (1).png" class="rounded-circle mx-auto d-block" width="80" height="80" style="object-fit:cover;" alt="Profile">
+      <h6 class="mt-2 mb-1">Bob Williams</h6>
+      <p class="text-muted small mb-1">Full Stack Developer</p>
+      <p class="text-muted small mb-2">6 years of experience</p>
+      <div>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">React</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Node.js</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">AWS</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">TypeScript</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">SQL</span>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-fade-primary btn-sm">View Profile</button>
+        <button class="btn btn-primary btn-sm">Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charlie Brown -->
+  <div class="col-sm-6 col-md-4 col-lg-3">
+     <div class="card p-3 text-center rounded-4 shadow-sm h-100  d-flex flex-column justify-content-between">
+      <img src="../imgs/employersearch-imgs/Selection (2).png" class="rounded-circle mx-auto d-block" width="80" height="80" style="object-fit:cover;" alt="Profile">
+      <h6 class="mt-2 mb-1">Charlie Brown</h6>
+      <p class="text-muted small mb-1">Marketing Specialist</p>
+      <p class="text-muted small mb-2">4 years of experience</p>
+      <div>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">SEO</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Content Marketing</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Social Media</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Analytics</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Email Campaigns</span>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-fade-primary btn-sm">View Profile</button>
+        <button class="btn btn-primary btn-sm">Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diana Miller -->
+   <div class="col-sm-6 col-md-4 col-lg-3">
+     <div class="card p-3 text-center rounded-4 shadow-sm h-100  d-flex flex-column justify-content-between">
+      <img src="../imgs/employersearch-imgs/Selection (3).png" class="rounded-circle mx-auto d-block" width="80" height="80" style="object-fit:cover;" alt="Profile">
+      <h6 class="mt-2 mb-1">Diana Miller</h6>
+      <p class="text-muted small mb-1">Data Scientist</p>
+      <p class="text-muted small mb-2">7 years of experience</p>
+      <div>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Python</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Machine Learning</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Statistics</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">SQL</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Big Data</span>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-fade-primary btn-sm">View Profile</button>
+        <button class="btn btn-primary btn-sm">Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ethan Davis -->
+   <div class="col-sm-6 col-md-4 col-lg-3">
+ <div class="card p-3 text-center rounded-4 shadow-sm h-100  d-flex flex-column justify-content-between">
+      <img src="../imgs/employersearch-imgs/Selection (4).png" class="rounded-circle mx-auto d-block" width="80" height="80" style="object-fit:cover;" alt="Profile">
+      <h6 class="mt-2 mb-1">Ethan Davis</h6>
+      <p class="text-muted small mb-1">UI/UX Designer</p>
+      <p class="text-muted small mb-2">5 years of experience</p>
+      <div>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Figma</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Sketch</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Prototyping</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">User Research</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Interaction Design</span>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-fade-primary btn-sm">View Profile</button>
+        <button class="btn btn-primary btn-sm">Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fiona Garcia -->
+  <div class="col-sm-6 col-md-4 col-lg-3">
+     <div class="card p-3 text-center rounded-4 shadow-sm h-100  d-flex flex-column justify-content-between">
+      <img src="../imgs/employersearch-imgs/Selection (5).png" class="rounded-circle mx-auto d-block" width="80" height="80" style="object-fit:cover;" alt="Profile">
+      <h6 class="mt-2 mb-1">Fiona Garcia</h6>
+      <p class="text-muted small mb-1">Cloud Solutions Architect</p>
+      <p class="text-muted small mb-2">10 years of experience</p>
+      <div>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Azure</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">GCP</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Kubernetes</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">DevOps</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Security</span>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-fade-primary btn-sm">View Profile</button>
+        <button class="btn btn-primary btn-sm">Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- George Harris -->
+   <div class="col-sm-6 col-md-4 col-lg-3">
+     <div class="card p-3 text-center rounded-4 shadow-sm h-100  d-flex flex-column justify-content-between">
+      <img src="../imgs/employersearch-imgs/Selection (6).png" class="rounded-circle mx-auto d-block" width="80" height="80" style="object-fit:cover;" alt="Profile">
+      <h6 class="mt-2 mb-1">George Harris</h6>
+      <p class="text-muted small mb-1">Software Engineer</p>
+      <p class="text-muted small mb-2">6 years of experience</p>
+      <div>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Java</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Spring Boot</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Microservices</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Docker</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">REST APIs</span>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-fade-primary btn-sm">View Profile</button>
+        <button class="btn btn-primary btn-sm">Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hannah Lee -->
+   <div class="col-sm-6 col-md-4 col-lg-3">
+     <div class="card p-3 text-center rounded-4 shadow-sm h-100  d-flex flex-column justify-content-between">
+      <img src="../imgs/employersearch-imgs/Selection (7).png" class="rounded-circle mx-auto d-block" width="80" height="80" style="object-fit:cover;" alt="Profile">
+      <h6 class="mt-2 mb-1">Hannah Lee</h6>
+      <p class="text-muted small mb-1">Technical Recruiter</p>
+      <p class="text-muted small mb-2">3 years of experience</p>
+      <div>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Sourcing</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Applicant Tracking</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Candidate Experience</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">LinkedIn Recruiter</span>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-fade-primary btn-sm">View Profile</button>
+        <button class="btn btn-primary btn-sm">Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ivan Petrov --> 
+    <div class="col-sm-6 col-md-4 col-lg-3">
+     <div class="card p-3 text-center rounded-4 shadow-sm h-100  d-flex flex-column justify-content-between">
+      <img src="./imgs/Selection (8).png" class="rounded-circle mx-auto d-block" width="80" height="80" style="object-fit:cover;" alt="Profile">
+      <h6 class="mt-2 mb-1">Ivan Petrov</h6>
+      <p class="text-muted small mb-1">QA Engineer</p>
+      <p class="text-muted small mb-2">5 years of experience</p>
+      <div>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Manual Testing</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Automation Testing</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Selenium</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">JIRA</span>
+        <span class="badge rounded-pill bg-light text-dark border me-1 mb-1">Test Cases</span>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-fade-primary btn-sm">View Profile</button>
+        <button class="btn btn-primary btn-sm">Message</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+ <!--pagination--->
+      <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    <footer class="py-3 shadow-sm border-top bg-light mt-auto sticky-bottom">
+      <div
+        class="container d-flex flex-wrap align-items-center justify-content-between gap-2"
+      >
+        <div class="footer-links d-flex gap-3 small mx-auto mx-md-0">
+          <a href="#" class="text-decoration-none text-muted fw-bold"
+            >JobLink</a
+          >
+          <a href="../index.html" class="text-decoration-none text-muted fw-bold"
+            >For Job Seekers</a
+          >
+          <a href="../Pages/Employer Dashboard.html" class="text-decoration-none text-muted fw-bold"
+            >For Employers</a
+          >
+          <a href="#" class="text-decoration-none text-muted fw-bold"
+            >Resources</a
+          >
+        </div>
+        <div class="d-flex align-items-center gap-3 mx-auto mx-md-0">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-github"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-youtube"></i>
+        </div>
+      </div>
+    </footer>
+
+       
+       
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
