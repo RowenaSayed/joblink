@@ -1,0 +1,93 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Roboto, sans-serif;
+ }
+.container {
+  max-width: 95% !important;   
+  margin: 0 auto !important; 
+ 
+}
+.card{
+    box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1F !important;
+    border-radius: 10px !important;
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    -ms-border-radius: 10px !important;
+    -o-border-radius: 10px !important;
+}
+.card-title {
+  font-family: Roboto, sans-serif;
+  font-size: 20px !important; 
+  line-height: 28px !important; 
+  font-weight: 600 !important; 
+  color: #171A1FFF !important; /* neutral-900 */
+}
+.card-text{ 
+  width: 390px; 
+  font-family: 'Roboto'; 
+  font-size: 14px; 
+  line-height: 20px; 
+  font-weight: 400; 
+  color: #565D6DFF; 
+}
+.form-check-label{ 
+  font-family: Roboto !important; 
+  font-size: 16px !important; 
+  line-height: 24px !important; 
+  font-weight: 400 !important; 
+  color: #171A1FFF !important; /* neutral-900 */
+}
+.cardTwo{
+  margin-bottom: 50px !important;
+  height: 500px !important;
+  background: #FFFFFFFF !important;
+  /*white*/border-radius: 10px !important;
+   box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1F !important;
+   /* shadow-xs */;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.accordion-button {
+  padding-left: 0;  
+  padding-right: 0; 
+}
+
+.accordion-body {
+  padding-left: 0;   
+  padding-right: 0;
+}
+
+.accordion-button::after {
+  transform: scale(0.6);   
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: scale(0.6) rotate(180deg); 
+}
+
+/* Button */
+.accordion-header {
+  
+  font-size: 18px; 
+  line-height: 28px; 
+  font-weight: 500; 
+  color: #171A1FFF; /* neutral-900 */
+  border: none; 
+  border-radius: 0px 0px 0px 0px; 
+ 
+}
+.accordion-item {
+  border-bottom: 1px solid #DEE1E6FF;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.container-lg{
+  height: max-content;
+}
