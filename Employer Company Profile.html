@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Company Profile</title>
+     <!-- CDN BOOTSTRAP -->
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- FONT AWESOME -->
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="Employer Company Profile.css">
+    <link rel="stylesheet" href="src/Navbar.css" />
+    <link rel="stylesheet" href="src/footer.css" />
+</head>
+<body>
+     <!-- NAVBAR -->
+       <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom" >
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand me-auto" href="#">
+          <img
+            src="Employer Company Profile_images/Logo.png"
+            alt="Logo"
+            height="50"
+            style="width: max-content"
+          />
+        </a>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto gap-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./job-seeker-jobs.html">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="./Job_Seeker_Applications.html"
+                >Applications</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./job seeker saved jobs.html"
+                >Saved-Jobs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./job seeker job alerts.html"
+                >Job Alerts</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./job_seeker_profile.html">Profile</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center ms-auto">
+              <!-- Search-->
+              <form class="search-box">
+                <div class="input-group input-group-sm" >
+                  <input 
+                    type="text"
+                    class="form-control"
+                    placeholder="Search..."
+                  />
+                  <button class="btn btn-outline-secondary" type="button" >
+                    <i class="bi bi-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+        </div>
+        <div class="d-flex align-items-center gap-3 ms-2">
+          <div class="position-relative" onclick="location.assign(`./notifications.html`)"><i class="bi bi-bell fs-5"></i></div>
+          <img
+            src="https://i.pravatar.cc/40?img=12"
+            class="rounded-circle"
+            width="36"
+            height="36"
+            alt="avatar"
+          />
+        </div>
+      </div>
+    </nav>
+     <!-- NAVBAR -->
+      <!-- CONTAINER -->
+      <div class="container py-5 px-4 mb-5">
+      <div class="card cardContent w-100 mb-4 pb-0" >
+      <div class="card-body">
+        <div class="content">
+            <h5 class="card-title">Company Information</h5>
+        <p class="card-text">Manage your public company profile details.</p>
+        </div>
+        <hr>
+        <div class="content">
+            <img class="logo" src="Employer Company Profile_images/logo2.svg" alt="">
+          <button class="btn btn-logo">Upload Logo</button>
+
+          <form class="row g-3 pt-5">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Company Name</label>
+    <input type="text" class="form-control" value="Tech Innovators Inc." id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Industry</label>
+    <input type="text" value="Software Development" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Website</label>
+    <input type="url" class="form-control" value="https://www.techinnovators.com" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Location</label>
+    <input type="text" value="San Francisco, CA" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-12">
+    <label for="inputCompany Description" class="form-label">Company Description</label>
+    <textarea name="" class="form-control" id="inputCompany Description" style="height: 118px; padding-top: 7px;padding-bottom: 7px; padding-left: 12px; padding-right: 12px; font-size: 14px; font-weight: 400; color: #171A1FFF;background: #FFFFFFFF; border-radius: 6px; border-width: 1px; border-color: #DEE1E6FF;border-style: solid; ">Tech Innovators Inc. is a leading software development firm dedicated to creating cutting-edge solutions for enterprise clients worldwide. We foster a culture of innovation, collaboration, and continuous learning, empowering our team to push boundaries and deliver exceptional results. Our mission is to empower businesses through transformative technology.</textarea>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary my-3">Save Changes</button>
+  </div>
+</form>
+        </div>
+        </div>
+    </div>
+    
+    <div class="card w-100 mb-5 pb-0" >
+      <div class="card-body">
+        <div class="content">
+            <h5 class="card-title">Company Reviews</h5>
+        <p class="card-text">4 reviews</p>
+        </div>
+        <hr>
+        <div class="content">
+        <h5 class="card-title">4.5 <span class="rating"><img class="rating-item" src="Employer Company Profile_images/star.svg"><img class="rating-item" src="Employer Company Profile_images/star.svg"><img class="rating-item" src="Employer Company Profile_images/star.svg"><img class="rating-item" src="Employer Company Profile_images/star.svg"><img src="Employer Company Profile_images/empty-star.svg" class="rating-item" alt=""></span> <span class="card-text">(4 total)</span></h5>
+       
+  <div class="card w-100 my-4"  style="height: 110px;">
+  <div class="card-body">
+    <div class="profile">
+        <div class="image">
+            <img src="Employer Company Profile_images/G1.jpg" alt="">
+        </div>
+        <div class="name">
+          <h5 class="card-title" style="padding: 0;margin: 0;">Alice Johnson</h5>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <span class="date"> &nbsp;
+          May 15, 2024</span>
+        </div>
+    </div>
+    <p class="card-text" style="margin-top: 8px;">A fantastic company to work for! Great culture, challenging projects, and supportive leadership. Highly recommend to anyone looking to grow their career in tech.</p>
+  </div>
+  
+</div>
+ <div class="card w-100 my-4" style="height: 110px;">
+  <div class="card-body">
+    <div class="profile">
+        <div class="image">
+            <img src="Employer Company Profile_images/G1 (1).jpg" alt="">
+        </div>
+        <div class="name">
+          <h5 class="card-title" style="padding: 0;margin: 0;">Bob Smith</h5>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star"></i>
+          <span class="date"> &nbsp;
+          April 28, 2024</span>
+        </div>
+    </div>
+    <p class="card-text" style="margin-top: 8px;">Good work-life balance and interesting technical problems. Compensation is competitive. Sometimes communication could be clearer on larger projects.</p>
+  </div>
+  
+</div>
+ <div class="card w-100 my-4 py-0" style="height: 110px;" >
+  <div class="card-body" >
+    <div class="profile">
+        <div class="image">
+            <img src="Employer Company Profile_images/F1 (1).jpg" alt="">
+        </div>
+        <div class="name">
+            <h5 class="card-title" style="padding: 0;margin: 0;">Charlie Brown</h5>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <span class="date"> &nbsp;
+          March 10, 2024</span>
+        </div>
+    </div>
+    <p class="card-text" style="margin-top: 8px;">The team is incredibly collaborative and the mentorship program is top-notch. I've learned so much since joining. Definitely a place where you can make an impact.</p>
+  </div>
+  
+</div>
+ <div class="card w-100 my-4" style="height: 110px;" >
+  <div class="card-body">
+    <div class="profile">
+        <div class="image">
+            <img src="Employer Company Profile_images/C1.jpg" alt="">
+        </div>
+        <div class="name">
+          <h5 class="card-title" style="padding: 0;margin: 0;">Diana Ross</h5>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star active2"></i>
+          <i class="fa-regular fa-star"></i>
+         
+          <span class="date"> &nbsp;
+          February 20, 2024</span>
+        </div>
+    </div>
+    <p class="card-text" style="margin-top: 8px;">Solid company with a clear vision. The benefits package is comprehensive. Wish there were more opportunities for remote work, but overall a positive experience.</p>
+  </div>
+  
+</div>
+      </div>
+      </div>
+    </div>
+    </div>
+      
+      <!-- CONTAINER -->
+       <!-- FOOTER -->
+        <footer class="py-3 shadow-sm border-top bg-light mt-auto">
+      <div
+        class="container d-flex flex-wrap align-items-center justify-content-between gap-2"
+      >
+        <div class="footer-links d-flex gap-3 small mx-auto mx-md-0">
+          <a href="#" class="text-decoration-none text-muted fw-bold"
+            >JobLink</a
+          >
+          <a href="../index.html" class="text-decoration-none text-muted fw-bold"
+            >For Job Seekers</a
+          >
+          <a href="../Pages/Employer Dashboard.html" class="text-decoration-none text-muted fw-bold"
+            >For Employers</a
+          >
+          <a href="#" class="text-decoration-none text-muted fw-bold"
+            >Resources</a
+          >
+        </div>
+        <div class="d-flex align-items-center gap-3 mx-auto mx-md-0">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-github"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-youtube"></i>
+        </div>
+      </div>
+    </footer>
+      <!-- FOOTER -->
+    <!-- CDN JS BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="job_seeker_details.js"></script>
+</body>
+</html>
