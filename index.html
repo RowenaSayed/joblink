@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./landingpage.css" />
+    <title>Joblink</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+          <i class="fa-solid fa-link me-2 text-primary"></i>
+          <span>JobLink</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-auto">
+            <li class="nav-item active">
+              <a class="nav-link active fw-semibold text-muted" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-muted" href="./pages.jobs.html">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-muted" href="#">Candidates</a>
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3">
+            <a
+              href="./pages/login.html"
+              class="btn btn-outline-primary-custom rounded-3 fw-bold px-4"
+              >Sign In</a
+            >
+            <a href="./pages/signUpEmployer.html" class="btn btn-primary-custom rounded-3 fw-bold px-4"
+              >Post a Job</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="min-vh-100 container-fluid">
+      <!-- HERO SECTION -->
+      <section
+        class="hero row justify-content-center bg-primary d-flex align-items-center pt-5"
+      >
+        <section class="container text-center py-5">
+          <h1 class="display-4 fw-bold mb-4 text-white">
+            Find Your Dream Job Today
+          </h1>
+          <p class="lead mb-5 text-white">
+            Search through thousands of job listings to find the perfect match
+            for your skills and career goals
+          </p>
+          <div class="row justify-content-center">
+            <div class="col-11 col-lg-8 bg-light rounded-3 py-4 px-4 mx-auto">
+              <form class="row g-2 align-items-center">
+                <div class="col-md-5 mb-2 mb-md-0">
+                  <div class="input-group">
+                    <span class="input-group-text bg-transparent border-end-0">
+                      <i class="fas fa-search text-muted"></i>
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control border-start-0"
+                      placeholder="Job title, keywords, or company"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4 mb-2 mb-md-0">
+                  <div class="input-group">
+                    <span class="input-group-text bg-transparent border-end-0">
+                      <i class="fas fa-map-marker-alt text-muted"></i>
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control border-start-0"
+                      placeholder="City, state, or remote"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <button class="btn btn-primary-custom w-100">Search</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="stats-section py-5 bg-light">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+              <h2 class="fw-bold text-primary">50,000+</h2>
+              <p class="text-muted">Job Listings</p>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+              <h2 class="fw-bold text-primary">12,000+</h2>
+              <p class="text-muted">Companies</p>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+              <h2 class="fw-bold text-primary">8M+</h2>
+              <p class="text-muted">Job Seekers</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <h2 class="fw-bold text-primary">95%</h2>
+              <p class="text-muted">Success Rate</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- How JobLink SECTION -->
+
+      <section class="jobs bg-white py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold text-dark">How JobLink Works</h2>
+            <p class="text-muted">Get your dream job in 4 simple steps</p>
+          </div>
+
+          <div
+            class="d-flex justify-content-center align-items-center gap-2 my-5"
+          >
+            <button
+              class="guide-btn btn btn-outline-primary-custom active"
+              data-guide="jobseeker"
+            >
+              Jobseeker
+            </button>
+            <button
+              class="guide-btn btn btn-outline-primary-custom"
+              data-guide="employer"
+            >
+              Employer
+            </button>
+          </div>
+
+          <div
+            id="jobseekerCarousel"
+            class="carousel slide guide-content active"
+            data-bs-ride="false"
+          >
+            <div class="carousel-inner text-center">
+              <div class="carousel-item active">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                  class="d-block mx-auto mb-4 img-fluid"
+                  alt="Create Account"
+                  style="max-width: 100px; height: auto"
+                />
+                <h5 class="fw-semibold">1. Create Your Account</h5>
+                <p class="text-muted mx-auto" style="max-width: 400px">
+                  Sign up as jobseeker and set up your professional profile.
+                </p>
+              </div>
+
+              <div class="carousel-item">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3039/3039381.png"
+                  class="d-block mx-auto mb-4 img-fluid"
+                  alt="Browse Jobs"
+                  style="max-width: 100px; height: auto"
+                />
+                <h5 class="fw-semibold">2. Browse Jobs</h5>
+                <p class="text-muted mx-auto" style="max-width: 400px">
+                  Explore thousands of opportunities from top companies.
+                </p>
+              </div>
+
+              <div class="carousel-item">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/942/942748.png"
+                  class="d-block mx-auto mb-4 img-fluid"
+                  alt="Apply Easily"
+                  style="max-width: 100px; height: auto"
+                />
+                <h5 class="fw-semibold">3. Apply Easily</h5>
+                <p class="text-muted mx-auto" style="max-width: 400px">
+                  Submit your application in just a few clicks.
+                </p>
+              </div>
+
+              <div class="carousel-item">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3271/3271314.png"
+                  class="d-block mx-auto mb-4 img-fluid"
+                  alt="Get Hired"
+                  style="max-width: 100px; height: auto"
+                />
+                <h5 class="fw-semibold">4. Get Hired</h5>
+                <p class="text-muted mx-auto" style="max-width: 400px">
+                  Connect with employers and start your new career journey.
+                </p>
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#jobseekerCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#jobseekerCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <div
+            id="employerCarousel"
+            class="carousel slide guide-content d-none"
+            data-bs-ride="false"
+          >
+            <div class="carousel-inner text-center">
+              <div class="carousel-item active">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3176/3176366.png"
+                  class="d-block mx-auto mb-4 img-fluid"
+                  alt="Create Company Account"
+                  style="max-width: 100px; height: auto"
+                />
+                <h5 class="fw-semibold">1. Create Company Account</h5>
+                <p class="text-muted mx-auto" style="max-width: 400px">
+                  Register your company and set up your employer profile.
+                </p>
+              </div>
+
+              <div class="carousel-item">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png"
+                  class="d-block mx-auto mb-4 img-fluid"
+                  alt="Post Jobs"
+                  style="max-width: 100px; height: auto"
+                />
+                <h5 class="fw-semibold">2. Post Job Listings</h5>
+                <p class="text-muted mx-auto" style="max-width: 400px">
+                  Create detailed job posts to attract qualified candidates.
+                </p>
+              </div>
+
+              <div class="carousel-item">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                  class="d-block mx-auto mb-4 img-fluid"
+                  alt="Review Applications"
+                  style="max-width: 100px; height: auto"
+                />
+                <h5 class="fw-semibold">3. Review Applications</h5>
+                <p class="text-muted mx-auto" style="max-width: 400px">
+                  Screen and filter applications from talented professionals.
+                </p>
+              </div>
+
+              <div class="carousel-item">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/942/942748.png"
+                  class="d-block mx-auto mb-4 img-fluid"
+                  alt="Hire Talent"
+                  style="max-width: 100px; height: auto"
+                />
+                <h5 class="fw-semibold">4. Hire Top Talent</h5>
+                <p class="text-muted mx-auto" style="max-width: 400px">
+                  Connect with the best candidates and grow your team.
+                </p>
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#employerCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#employerCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Jobs SECTION -->
+      <section class="jobs bg-light py-5">
+        <div class="container">
+          <div
+            class="d-flex justify-content-between align-items-center flex-wrap mb-4"
+          >
+            <h2 class="fw-bold text-dark mb-2">Featured Jobs</h2>
+            <button class="btn btn-outline-primary-custom mb-2">
+              View All Jobs
+            </button>
+          </div>
+          <p class="text-muted mb-4">
+            Browse through our most recent job openings
+          </p>
+          <div class="job-cards row align-items-stretch gy-4 gx-4">
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="job-card card p-4 shadow rounded-3 border-0 h-100">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="company-logo me-3">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmFPgY3fuNQTEpxHRN2xgWHNU2Pn9bhchnCg&s"
+                        alt="Google Logo"
+                        style="height: 60px; width: 60px"
+                        class="rounded"
+                      />
+                    </div>
+                    <div>
+                      <h5 class="mb-0">Senior Product Designer</h5>
+                      <div class="text-muted">Google · Mountain View, CA</div>
+                    </div>
+                  </div>
+                  <div class="text-success">
+                    <i class="fas fa-bookmark"></i>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                  <div>
+                    <span class="badge bg-light text-dark p-2">Full Time</span>
+                    <span class="badge bg-light text-dark p-2">Remote</span>
+                  </div>
+                  <div class="text-success fw-bold">$140k</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="job-card card p-4 shadow rounded-3 border-0 h-100">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="company-logo me-3">
+                      <img
+                        src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo.png"
+                        alt="Amazon Logo"
+                        style="height: 60px; width: 60px"
+                        class="rounded"
+                      />
+                    </div>
+                    <div>
+                      <h5 class="mb-0">Frontend Developer</h5>
+                      <div class="text-muted">Amazon · Seattle, WA</div>
+                    </div>
+                  </div>
+                  <div class="text-success">
+                    <i class="fas fa-bookmark"></i>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                  <div>
+                    <span class="badge bg-light text-dark p-2">Full Time</span>
+                    <span class="badge bg-light text-dark p-2">Hybrid</span>
+                  </div>
+                  <div class="text-success fw-bold">$120k</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="job-card card p-4 shadow rounded-3 border-0 h-100">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="company-logo me-3">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                        alt="Netflix Logo"
+                        style="height: 60px; width: 60px"
+                        class="rounded bg-white p-1"
+                      />
+                    </div>
+                    <div>
+                      <h5 class="mb-0">UX Researcher</h5>
+                      <div class="text-muted">Netflix · Los Gatos, CA</div>
+                    </div>
+                  </div>
+                  <div class="text-success">
+                    <i class="fas fa-bookmark"></i>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                  <div>
+                    <span class="badge bg-light text-dark p-2">Contract</span>
+                    <span class="badge bg-light text-dark p-2">Remote</span>
+                  </div>
+                  <div class="text-success fw-bold">$100k</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="job-card card p-4 shadow rounded-3 border-0 h-100">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="company-logo me-3">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAA4CAMAAABe34GAAAAAZlBMVEUAAAD////g4ODs7Ozb29urq6uBgYHj4+NqamqoqKijo6MwMDDBwcH6+vry8vIVFRXPz8+MjIyTk5NgYGAoKCh7e3ucnJweHh5lZWU3Nze1tbVYWFjHx8cNDQ1zc3PV1dVNTU1AQEB8DlvWAAABfklEQVRIiZXWaYOCIBAG4MkDNdQ8Kq9c2///J1cuRc14d75JTzQBw0iXr/Fi/Gk90jebNkRUgbolESGkMy4xFZDuFN6AU800fiDa05giRLefpj7Tuca3C6J7rX1Iq//Y7PCZlmlXh+GzuZshyY7Dts6Cotj9dtCH/Ss66vypNm9kgRlKY7PozNvqktbo+jmJyB4hirNVRw1tY/88R2B0cPzsQ0xK+xAWR0boO4Y7X+gKw7HMO8NwrdYEm/qu1/sGabVl5LmlyWPWIaR14dMD0uZUDQgejOaIZkaPiC6NhmLR0HL/GN25LRE3uoZSyf+13onWV0iPWheQJtV9KHdLGZM6sdBmzuFJXbqhilToCdXU5oRuvgiO1/wcV8Ivn3lHRVW0biejlXdVBGpP3ZqxW5Kse6mx/fTN/Z0AuFp7w9uJudVJ3LlEdt9xHdx+06Uu36uCbXvatqs1dVzbHWOp+UUvszdXVbN5Yr6wvLbZvdhnHf0y+z2qYG/+rtb+/Aeknw0jTOHHTAAAAABJRU5ErkJggg=="
+                        alt="Apple Logo"
+                        style="height: 60px; width: 60px"
+                        class="rounded bg-white p-2"
+                      />
+                    </div>
+                    <div>
+                      <h5 class="mb-0">iOS Engineer</h5>
+                      <div class="text-muted">Apple · Cupertino, CA</div>
+                    </div>
+                  </div>
+                  <div class="text-success">
+                    <i class="fas fa-bookmark"></i>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                  <div>
+                    <span class="badge bg-light text-dark p-2">Full Time</span>
+                    <span class="badge bg-light text-dark p-2">On-site</span>
+                  </div>
+                  <div class="text-success fw-bold">$160k</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="pt-5 pb-3 bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5 class="text-white mb-4">
+              <i class="fas fa-link me-2 text-primary"></i>JobLink
+            </h5>
+            <p class="text-light">
+              JobLink connects talented job seekers with top employers
+              worldwide. Our mission is to make the job search process simpler,
+              faster, and more effective.
+            </p>
+            <div class="d-flex mt-4">
+              <a href="#" class="social-icon me-2 text-white">
+                <i class="fab fa-facebook-f text-white"></i>
+              </a>
+              <a href="#" class="social-icon me-2 text-white">
+                <i class="fab fa-twitter text-white"></i>
+              </a>
+              <a href="#" class="social-icon me-2">
+                <i class="fab fa-linkedin-in text-white"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-instagram text-white"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h5 class="text-white mb-4">For Job Seekers</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Browse Jobs</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Customize Jobs Alert</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Submit Resume</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h5 class="text-white mb-4">For Employers</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Post a Job</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Browse Resumes</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Recruitment Solutions</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Schedule interviews</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 bg-white-50" />
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./landingpage.js"></script>
+  </body>
+</html>
