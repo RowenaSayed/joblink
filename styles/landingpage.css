@@ -75,7 +75,7 @@
 .hero {
   height: 90vh;
   background: linear-gradient(rgba(59, 89, 152, 0.8), rgba(59, 89, 152, 0.8)),
-    url("./landingpageImages/hero.jpg");
+    url("../imgs//landingpageImages/hero.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
