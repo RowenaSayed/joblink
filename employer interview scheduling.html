@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employer interview scheduling</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./employer interview scheduling.css">
+</head>
+<body>
+    
+    <header class="border-bottom">
+        <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
+            <div class="container-fluid">
+                <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navMenu"
+                aria-controls="navMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand me-auto" href="#">
+                    <img src="./saved jobs images/saved jobs logo.png" alt="Logo" height="50" width="100" />
+                </a>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav mx-auto gap-lg-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Employer Dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./PostJob.html">Post Job</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Manage Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Applications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Searh Candidates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Analytics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Company Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Interview Scheduling</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center gap-3 ms-lg-auto">
+                    <div class="position-relative"><i class="bi bi-bell fs-5"></i></div>
+                    <img
+                        src="https://i.pravatar.cc/40?img=12"
+                        class="rounded-circle"
+                        width="36"
+                        height="36"
+                        alt="avatar"
+                    />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid mt-5">
+        <div class="d-flex interview-schedule-container justify-content-between column-gap-4">
+            <section class="d-flex flex-column p-4 border rounded border-success col-3">
+                <div class="schedule-overview-title">
+                    <h2 class=" fw-bold">Schedule Overview</h2>
+                    <p class="text-secondary">Manage your calendar and candidates.</p>
+                </div>
+                <div>
+                    <h4>Select Date</h4>
+                    <div class="calender">
+                        <div class="header-calender d-flex justify-content-between align-items-center" style="padding: 10px;">
+                            <div id="prev" class="btn border-2 border-secondary-subtle rounded"><i class="bi bi-chevron-left fs-5"></i></div>
+                            <div id="month-year" class="fw-bold" style="font-size: 20px;"></div>
+                            <div id="next" class="btn border-2 border-secondary-subtle rounded"><i class="bi bi-chevron-right fs-5"></i></div>
+                        </div>
+                        <div class="weekdays d-flex flex-wrap">
+                            <div>Su</div>
+                            <div>Mo</div>
+                            <div>Tu</div>
+                            <div>We</div>
+                            <div>Th</div>
+                            <div>Fr</div>
+                            <div>Sa</div>
+                        </div>
+                        <div class="days d-flex flex-wrap" id="days"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="d-flex flex-column col-9 p-4 border rounded border-success">
+                <div class="d-flex w-100 align-items-center">
+                    <h4 class="fw-bold me-3">Interview Schedule</h4>
+                    <div class="d-flex justify-content-between align-items-center col-9">
+                        <div class="d-flex align-items-center">
+                            <div id="prev-schedule" class="btn border-1 py-1 px-2 border-secondary-subtle rounded"><i class="bi bi-chevron-left" style="font-size: 15px;"></i></div>
+                            <div id="month-year-schedule" class="fw-bold mx-2"></div>
+                            <div id="next-schedule" class="btn border-1 py-1 px-2 border-secondary-subtle rounded"><i class="bi bi-chevron-right" style="font-size: 15px;"></i></div>
+                        </div>
+                        <div>
+                            <button style="background-color: #22498CFF;" class="text-light py-2 px-3 rounded border-0 fw-bold">Schedule New Interview</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="fw-bold text-center" style="transform: translateY(170px);">A Calendar Will Be Here...</h2>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./employer interview scheduling.js"></script>
+</body>
+</html>
