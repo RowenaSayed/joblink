@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup - Jobseeker | JobLink</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="../landingpage.css" />
+ <link rel="stylesheet" href="../styles/SignupJobseeker.css">
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <i class="fa-solid fa-link me-2 text-primary"></i>
+        <span>JobLink</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto me-auto">
+          <li class="nav-item"><a class="nav-link fw-semibold text-muted" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-muted" href="#">Jobs</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-muted" href="#">Candidates</a></li>
+        </ul>
+        <div class="d-flex gap-3">
+          <a href="#" class="btn btn-primary-custom rounded-3 fw-bold px-4">Sign In</a>
+          <a href="#" class="btn btn-outline-primary-custom rounded-3 fw-bold px-4">Post a Job</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+ <section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="card shadow border-0 rounded-4">
+          <div class="card-body p-5">
+            <h3 class="text-center fw-bold mb-4 text-primary">Welcome Back!</h3>
+            <form>
+              <div class="mb-3">
+                <label for="email" class="form-label fw-semibold">Email Address</label>
+                <input type="email" class="form-control rounded-3" id="email" placeholder="Enter your email" required>
+              </div>
+
+              <div class="mb-3 password-wrapper" style="position: relative;">
+                <label for="password" class="form-label fw-semibold">Password</label>
+                <input type="password" class="form-control rounded-3" id="password" placeholder="Enter your password" required>
+                <i class="fa-solid fa-eye password-toggle" id="togglePassword" >                </i>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="remember">
+                  <label class="form-check-label text-muted" for="remember">Remember Me</label>
+                </div>
+                <a href="#" class="text-primary text-decoration-none fw-semibold">Forgot Password?</a>
+              </div>
+
+              <button type="submit" class="btn btn-primary-custom w-100 rounded-3 fw-bold py-2">Login</button>
+
+              <div class="text-center mt-4">
+                <p class="text-muted mb-0">Don’t have an account?
+                  <a href="./signUpJobseeker.html" class="text-primary fw-semibold text-decoration-none">Sign Up</a>
+                </p>
+              </div>
+
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="py-4 bg-white border-top mt-5">
+    <div class="container text-center">
+      <p class="text-muted mb-0">© 2025 JobLink. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+    const confirmPassword = document.getElementById('confirmPassword');
+
+    togglePassword.addEventListener('click', () => {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      togglePassword.classList.toggle('fa-eye');
+      togglePassword.classList.toggle('fa-eye-slash');
+    });
+
+    toggleConfirmPassword.addEventListener('click', () => {
+      const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+      confirmPassword.setAttribute('type', type);
+      toggleConfirmPassword.classList.toggle('fa-eye');
+      toggleConfirmPassword.classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
+</html>
