@@ -22,48 +22,43 @@
     <link rel="stylesheet" href="../styles/Navbar.css" />
   </head>
   <body>
-      <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navMenu"
-          aria-controls="navMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-       <a class="navbar-brand fw-bold d-flex align-items-center" href="../index.html">
+     <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu"
+            aria-controls="navMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
           <i class="fa-solid fa-link  ms-md-5 " style="color: #284C99;"></i>
           <span>JobLink</span>
         </a>
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav mx-auto gap-md-2">
-            <li class="nav-item">
-               <a class="nav-link" href="./Employer Dashboard.html">Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./PostJob.html">Post Job</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="./manageJobs.html">Manage Jobs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="./employersearsh.html">Find Candidates</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./Employer Auto Responses.html">Response</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="./Employer Company Profile.html">Profile</a></li>
-             <li class="nav-item">
-              <a class="nav-link" href="./employer interview scheduling.html">Interviews</a>
-            </li>
-          </ul>
-        </div>
-          </ul>
-          <div class="d-flex align-items-center ms-auto">
+          <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto gap-md-2">
+              <li class="nav-item">
+                <a class="nav-link" href="./jobseekerDashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="./job-seeker-jobs.html">Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Job_Seeker_Applications.html">Applications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./job seeker saved jobs.html">Saved-Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./job seeker job alerts.html">Job Alerts</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="./job_seeker_profile.html">Profile</a></li>
+            </ul>
+            <div class="d-flex align-items-center ms-auto">
               <!-- Search-->
               <form class="search-box">
                 <div class="input-group input-group-sm">
@@ -72,24 +67,24 @@
                     class="form-control"
                     placeholder="Search..."
                   />
-                  <button class="btn btn-outline-secondary " style="cursor: pointer;" type="button" >
+                  <button class="btn btn-outline-secondary" type="button">
                     <i class="bi bi-search"></i>
                   </button>
                 </div>
               </form>
             </div>
+          </div>
+          <div class="d-flex align-items-center gap-3 ms-2">
+            <div class="position-relative" onclick="location.assign(`./notifications.html`)"><i class="bi bi-bell fs-5"></i></div>
+            <img
+              src="https://i.pravatar.cc/40?img=12"
+              class="rounded-circle"
+              width="36"
+              height="36"
+              alt="avatar"
+            />
+          </div>
         </div>
-        <div class="d-flex align-items-center gap-3 ms-2 me-2" style="cursor: pointer;">
-          <div class="position-relative" onclick="location.assign(`./notifications.html`)"><i class="bi bi-bell fs-5"></i></div>
-          <img
-            src="https://i.pravatar.cc/40?img=12"
-            class="rounded-circle"
-            width="36"
-            height="36"
-            alt="avatar"
-          />
-        </div>
-      </div>
-    </nav>
+      </nav>
   </body>
 </html>

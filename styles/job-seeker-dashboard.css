@@ -31,12 +31,8 @@
 
 
     body{background:var(--bg); color:var(--ink);}    
-    .navbar{background:#fff; box-shadow:var(--shadow);}    
-    .nav-link{color:#4b5563; font-weight:500}
-    .nav-link.active{color:var(--ink)}
-    .brand-badge{
-      width:28px;height:28px;border-radius:10px;display:inline-grid;place-items:center;background:var(--accent);color:#fff;font-weight:700
-    }
+   
+   
     .hero{
       background:#eef2ff; border:1px solid #e5e7eb; border-radius:1rem; box-shadow:var(--shadow)
     }
@@ -55,9 +51,7 @@
     /* Smooth focus */
     .form-control, .btn{transition: box-shadow .2s ease, transform .15s ease}
     .btn:active{transform: translateY(1px);color: #112548FF;}
-    .search-box {
-  width: 75%;   
-}
+
 
 @media (max-width: 768px) {
   .search-box {
