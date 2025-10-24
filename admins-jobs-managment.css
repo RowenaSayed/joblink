@@ -1,0 +1,34 @@
+.active {
+    color: #284c8a !important;
+    font-weight: bold;
+}
+.admins-jobs-managment-container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 95%;
+    padding: 0 15px;
+}
+
+
+.jobs-btn:hover {
+    transition: 0.3s;
+    background-color: #284c8a !important;
+    color: white;
+}
+
+
+
+.red-background {
+    background-color: red;
+}
+
+
+.btn-job-active {
+    background-color: #284c8a !important;
+    color: white;
+}
+@media (min-width: 1150px) {
+    .jobs-status {
+        width: calc(90% / 3);
+    }
+}
