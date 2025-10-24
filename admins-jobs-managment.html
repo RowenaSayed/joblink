@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admins Jobs Managment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./admins-jobs-managment.css">
+</head>
+<body>
+    
+
+    <header class="border-bottom">
+        <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
+            <div class="container-fluid">
+                <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navMenu"
+                aria-controls="navMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand me-auto" href="#">
+                    <img src="./saved jobs images/saved jobs logo.png" alt="Logo" height="50" width="100" />
+                </a>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav mx-auto gap-lg-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Employer Dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./PostJob.html">User Management</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center gap-3 ms-lg-auto">
+                    <div class="position-relative" title="notifications"><i class="bi bi-bell fs-5"></i></div>
+                    <img
+                        src="https://i.pravatar.cc/40?img=12"
+                        class="rounded-circle"
+                        width="36"
+                        height="36"
+                        alt="avatar"
+                    />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-5">
+        <div class="admins-jobs-managment-container">
+            <section class="d-flex flex-column">
+                <div class="d-flex justify-content-sm-start justify-content-center mb-3">
+                    <h3 class="fw-bold">Jobs Management</h3>
+                </div>
+                <div class="row row-cols-lg-4 row-cols-1 gap-5">
+                    <div  class="jobs-status border border-secondary rounded p-4 d-flex align-items-start justify-content-between">
+                        <div class="d-flex flex-column">
+                            <p>Total jobs</p>
+                            <p id="total-jobs" class="fw-bold fs-2" title="total jobs"></p>
+                        </div>
+                        <div>
+                            <i class="bi bi-calendar"></i>
+                        </div>
+                    </div>
+                    <div  class="jobs-status border border-secondary rounded p-4 d-flex align-items-start justify-content-between">
+                        <div class="d-flex flex-column">
+                            <p>Active jobs</p>
+                            <p id="active-jobs" class="fw-bold fs-2" title="active jobs"></p>
+                        </div>
+                        <div>
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                    </div>
+                    <div  class="jobs-status border border-secondary rounded p-4 d-flex align-items-start justify-content-between">
+                        <div class="d-flex flex-column">
+                            <p>Inactive jobs</p>
+                            <p id="inactive-jobs" class="fw-bold fs-2" title="inactive jobs"></p>
+                        </div>
+                        <div>
+                            <i class="bi bi-shield-x"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            <section class="d-flex flex-column mt-5">
+                <div class="d-flex gap-3">
+                    <div class="d-flex flex-column">
+                        <label for="filter-by-name" class="fw-bold mb-1">Filter by name</label>
+                        <div class="dropdown mb-5" id="filter-by-name">
+                            <button class="btn btn-transparent border border-secondary rounded dropdown-toggle text-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Select role
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <label for="filter-by-status" class="fw-bold mb-1">Filter by name</label>
+                        <div class="dropdown" id="filter-by-status">
+                            <button class="btn btn-transparent border border-secondary rounded dropdown-toggle text-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Select status
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Active</a></li>
+                                <li><a class="dropdown-item" href="#">Inactive</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="jobs-area border border-secondary rounded pt-3 px-3"></div>
+                <div class="d-flex justify-content-between mx-auto my-5 align-items-center">
+                    <div id="prev" class="btn"><i class="bi bi-chevron-left"></i>Previous</div>
+                    <div>
+                        <button class="jobs-btns bg-transparent border border-secondary rounded btn-job-active" style="padding: 7px 15px;">1</button>
+                        <button class="jobs-btns bg-transparent border border-secondary rounded" style="padding: 7px 15px;">2</button>
+                    </div>
+                    <div id="next" class="btn">Next<i class="bi bi-chevron-right"></i></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./admins-jobs-managment.js"></script>
+</body>
+</html>
