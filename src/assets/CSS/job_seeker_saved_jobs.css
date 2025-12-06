@@ -1,0 +1,10 @@
+.card-details-btn:hover {
+    transition: 0.3s;
+    background-color: #284c8a;
+    color: white;
+}
+.card-remove-btn:hover {
+    transition: 0.5s;
+    background-color: rgb(138, 10, 10) !important;
+    color: white;
+}

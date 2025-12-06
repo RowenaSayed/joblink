@@ -1,0 +1,21 @@
+.section-one-btn:hover {
+    transition: 0.3s;
+    background-color: rgba(77, 78, 80, 0.8) !important;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.second-section-btn:hover,
+.edit-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 320px) {
+    .card-title {
+        width: 150px !important;
+    }
+    .card-body .btn {
+        font-weight: 200 !important;
+        font-size: 12px !important;
+    }
+}
