@@ -175,7 +175,7 @@ function EmployerSearchResults() {
         
 
         const response = await fetch(
-          "https://job-portal-server-deploy-2gna.vercel.app/api/users/all-candidates",
+          "https://joblink-server-app.vercel.app/api/users/all-candidates",
           {
             method: "GET",
             headers: {
