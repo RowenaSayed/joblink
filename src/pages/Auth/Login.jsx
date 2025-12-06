@@ -12,15 +12,6 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (msg) {
-      const timer = setTimeout(() => {
-        setMsg("");
-        setMsgType("");
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [msg]);
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -115,7 +106,6 @@ const handleSubmit = async (e) => {
                       style={{
                         position: "absolute",
                         right: "15px",
-                        top: "50%",
                         transform: "translateY(-50%)",
                         cursor: "pointer",
                       }}

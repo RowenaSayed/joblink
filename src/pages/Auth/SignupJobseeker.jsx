@@ -19,16 +19,7 @@ export default function SignupJobseeker() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (msg) {
-      const timer = setTimeout(() => {
-        setMsg("");
-        setMsgType("");
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [msg]);
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (user.password !== user.confirmPassword) {

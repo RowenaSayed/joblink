@@ -10,28 +10,28 @@ function Footer() {
           </Link>
 
           <Link
-            to="/jobseeker-dashboard"
+            to="/"
             className="text-decoration-none text-muted fw-bold"
           >
             For Job Seekers
           </Link>
 
           <Link
-            to="/employer-dashboard"
+            to="/"
             className="text-decoration-none text-muted fw-bold"
           >
             For Employers
           </Link>
 
           <Link
-            to="/admin-dashboard"
+            to="/"
             className="text-decoration-none text-muted fw-bold"
           >
             For Admins
           </Link>
 
           <Link
-            to="/resources"
+            to="/"
             className="text-decoration-none text-muted fw-bold"
           >
             Resources

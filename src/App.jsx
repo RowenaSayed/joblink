@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 // --------------------------------------------------------
 import AuthLayout from "./components/layout/Authlayout";
 import EmployerLayout from "./components/layout/EmployerLayout";
@@ -29,8 +30,25 @@ import ViewCompanyProfile from "./pages/jobseeker/ViewCompanyProfile";
 function App() {
   return (
     <Routes>
-      <Route element={<JobLinkLanding />} path="/"></Route>
-      <Route element={<ViewCompanyProfile/>} path="/company/:id"></Route>
+      <Route
+        path="/"
+        element={
+          localStorage.getItem("token") ? (
+            localStorage.getItem("role").toLowerCase().trim() ===
+            "jobseeker" ? (
+              <Navigate to="/jobseeker/dashboard" />
+            ) : localStorage.getItem("role").toLowerCase().trim() ===
+              "employer" ? (
+              <Navigate to="/employer/dashboard" />
+            ) : (
+              <Navigate to="/admin/dashboard" />
+            )
+          ) : (
+            <JobLinkLanding />
+          )
+        }
+      />
+      <Route element={<ViewCompanyProfile />} path="/company/:id"></Route>
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignupJobseeker />}></Route>
@@ -47,7 +65,10 @@ function App() {
         <Route path="candidates" element={<Search />}></Route>
         <Route path="profile" element={<Employer_Company_Profile />}></Route>
         <Route path="applicants" element={<Applicants />}></Route>
-        <Route path="interviews" element={<EmployerInterviewScheduling />}></Route>
+        <Route
+          path="interviews"
+          element={<EmployerInterviewScheduling />}
+        ></Route>
       </Route>
 
       {/* ===================================== */}
