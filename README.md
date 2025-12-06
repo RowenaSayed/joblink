@@ -1,3 +1,12 @@
+<div align="center" style="background: linear-gradient(90deg, #0f172a, #1e293b); padding: 25px; border-radius: 12px; color: white;">
+
+<h1><strong>JobLink</strong> - Job Portal Website</h1>
+<p><i>A role-based platform for Job Seekers, Employers, and Admins</i></p>
+
+</div>
+
+---
+
 ## Overview
 A role-based job portal system with separate dashboards and tools for Job Seekers, Employers, and Admins  
 Includes job search, applications, candidate management, analytics, notifications, and user profiles with responsive design  
