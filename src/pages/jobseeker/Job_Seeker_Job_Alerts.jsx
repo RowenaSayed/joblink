@@ -16,8 +16,8 @@ function Job_Seeker_Job_Alerts() {
       const response = await fetch("https://joblink-server-app.vercel.app/api/job-alerts", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
-      const data = await response.json();
-      setActiveAlerts(data);
+      const Data = await response.json();
+      setActiveAlerts(Data.data);
     } catch (error) {
       console.error("Error fetching alerts:", error);
     } finally {

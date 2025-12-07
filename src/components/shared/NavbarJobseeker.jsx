@@ -63,6 +63,7 @@ export default function NavbarJobseeker() {
                 Job Alerts
               </NavLink>
             </li>
+
             <li className="nav-item">
               <NavLink className="nav-link" to="/jobseeker/profile">
                 Profile
