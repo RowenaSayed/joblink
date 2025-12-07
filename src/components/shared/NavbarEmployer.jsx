@@ -6,8 +6,10 @@ function NavbarEmployer() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    navigate("/");
+    localStorage.removeItem("role");
+    setTimeout(() => {
+      navigate("/");
+    }, 500);
   };
 
   return (
