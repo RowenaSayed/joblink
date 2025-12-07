@@ -117,7 +117,7 @@ function Employer_Company_Profile() {
       data.append("description", formData.description);
       if (formData.logo) data.append("logo", formData.logo);
 
-      const res = await fetch("http://localhost:5000/api/company", {
+      const res = await fetch("https://joblink-app.vercel.app/api/company", {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}` },
         body: data,
@@ -201,7 +201,7 @@ function Employer_Company_Profile() {
                     formData.logo
                       ? URL.createObjectURL(formData.logo)
                       : companyInfo?.logo
-                      ? `http://localhost:5000/uploads/${companyInfo.logo}`
+                      ? `https://joblink-app.vercel.app/uploads/${companyInfo.logo}`
                       : logo
                   }
                   alt="company logo"
