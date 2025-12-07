@@ -9,7 +9,7 @@ function Job_Seeker_Job_Alerts() {
 
   useEffect(() => {
     fetchAlerts();
-  }, []);
+  }, [activeAlerts]);
 
   const fetchAlerts = async () => {
     try {

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { Chart, registerables } from "chart.js";
 
+Chart.register(...registerables);
 
 function Analytics() {
   const [filter, setFilter] = useState("all");
   const [applications, setApplications] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchApplications = async () => {
       try {
         const token = localStorage.getItem("token");
-
+        console.log(token);
         const response = await fetch(
-          "https://joblink-server-app.vercel.app/api/apps",
+          "https://joblink-server-app.vercel.app/api/apps/all/company-apps/",
           {
             method: "GET",
             headers: {
@@ -31,129 +31,201 @@ function Analytics() {
         }
 
         const data = await response.json();
-        setApplications(data);
+        setApplications(data.applications);
       } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
+        console.log(err.message);
       }
     };
 
     fetchApplications();
   }, []);
 
-  const filteredApps = applications.filter(
-    (app) => filter === "all" || app.status === filter
-  );
 
-  if (loading)
-    return (
-      <div className="page2">
-        <div className="container text-center mt-5">
-          <div className="spinner-border" role="status"></div>
-          <p className="mt-2">Loading applications...</p>
-        </div>
-    
-      </div>
-    );
 
-  if (error)
-    return (
-      <div className="page2">
-        <div className="container text-center mt-5">
-          <div className="alert alert-danger">Error: {error}</div>
-          <button
-            className="btn btn-primary mt-2"
-            onClick={() => window.location.reload()}
-          >
-            Try Again
-          </button>
-        </div>
-        <Footer />
-      </div>
-    );
+  const jobsPosted = new Set(applications.map((app) => app.jobId)).size;
+  const totalApplications = applications.length;
+  const candidatesHired = applications.filter(
+    (app) => app.status === "hired"
+  ).length;
+
+  const destroyExistingChart = (canvasId) => {
+    Object.values(Chart.instances).forEach((chart) => {
+      if (chart.canvas.id === canvasId) {
+        chart.destroy();
+      }
+    });
+  };
+
+  // Charts
+  useEffect(() => {
+    // Views Chart
+    destroyExistingChart("viewsChart");
+    const ctxViews = document.getElementById("viewsChart");
+    if (ctxViews) {
+      new Chart(ctxViews, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+          datasets: [
+            {
+              label: "Views",
+              data: [50, 70, 60, 90, 100],
+              borderColor: "blue",
+              fill: false,
+            },
+            {
+              label: "Applications",
+              data: [20, 30, 25, 40, 50],
+              borderColor: "green",
+              fill: false,
+            },
+          ],
+        },
+      });
+    }
+
+    // Source Chart
+    destroyExistingChart("sourceChart");
+    const ctxSource = document.getElementById("sourceChart");
+    if (ctxSource) {
+      new Chart(ctxSource, {
+        type: "doughnut",
+        data: {
+          labels: ["Website", "Referral", "Job Portal", "Others"],
+          datasets: [
+            {
+              data: [40, 25, 25, 10],
+              backgroundColor: ["#36A2EB", "#FF6384", "#FFCE56", "#4BC0C0"],
+            },
+          ],
+        },
+      });
+    }
+
+    // Funnel Chart
+    destroyExistingChart("funnelChart");
+    const ctxFunnel = document.getElementById("funnelChart");
+    if (ctxFunnel) {
+      new Chart(ctxFunnel, {
+        type: "bar",
+        data: {
+          labels: ["Applied", "Interviewed", "Offered", "Hired"],
+          datasets: [
+            {
+              label: "Candidates",
+              data: [100, 60, 30, 15],
+              backgroundColor: "#36A2EB",
+            },
+          ],
+        },
+      });
+    }
+
+    // Time Chart
+    destroyExistingChart("timeChart");
+    const ctxTime = document.getElementById("timeChart");
+    if (ctxTime) {
+      new Chart(ctxTime, {
+        type: "bar",
+        data: {
+          labels: ["Screening", "Interview", "Offer", "Onboarding"],
+          datasets: [
+            {
+              label: "Avg. Days",
+              data: [3, 5, 4, 2],
+              backgroundColor: "#FF6384",
+            },
+          ],
+        },
+      });
+    }
+  }, [applications]);
 
   return (
-    <div className="page2">
-
-      <div className="applications-section">
-        <h1>My Applications</h1>
-
-        <div className="container mb-5 pb-5 extra-margin mt-4">
-          <h2>Application History</h2>
-          <p className="subtitle">Track the status of your applications.</p>
-
-          <nav className="nav nav-pills flex-column flex-sm-row my-0 py-1 px-1 applications-filter">
-            {["all", "pending", "interviewing", "offered", "rejected"].map(
-              (status) => (
-                <a
-                  key={status}
-                  href="#"
-                  className={`flex-sm-fill text-sm-center nav-link filter-btn ${
-                    filter === status ? "active" : ""
-                  }`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setFilter(status);
-                  }}
-                >
-                  {status.charAt(0).toUpperCase() + status.slice(1)}
-                </a>
-              )
-            )}
-          </nav>
-
-          <div className="table-responsive mt-3">
-            <table className="table align-middle">
-              <thead>
-                <tr>
-                  <th>Job Title</th>
-                  <th>Company</th>
-                  <th>Date Applied</th>
-                  <th>Status</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredApps.length > 0 ? (
-                  filteredApps.map((app, idx) => (
-                    <tr key={app._id || idx}>
-                      <td>{app.jobId?.title || app.title || "N/A"}</td>
-                      <td>
-                        {app.jobId?.company?.name || app.company || "N/A"}
-                      </td>
-                      <td>
-                        {new Date(
-                          app.createdAt || app.date
-                        ).toLocaleDateString()}
-                      </td>
-                      <td>
-                        <span className={`badge ${app.status || "pending"}`}>
-                          {(app.status || "pending").charAt(0).toUpperCase() +
-                            (app.status || "pending").slice(1)}
-                        </span>
-                      </td>
-                      <td>
-                        <button className="btn btn-sm btn-outline-primary">
-                          View Details
-                        </button>
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="5" className="text-center py-4">
-                      No applications found
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
+    <main>
+      <div className="container my-4">
+        <div className="row text-center mb-4 g-2">
+          <div className="col-md-3">
+            <div className="card shadow-sm border-0 h-100 d-flex flex-column">
+              <div className="card-body">
+                <h6 className="text-muted">Jobs Posted</h6>
+                <h3 className="fw-bold">{jobsPosted}</h3>
+                <small className="text-success">+5 Since last month</small>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="card shadow-sm border-0 h-100 d-flex flex-column">
+              <div className="card-body">
+                <h6 className="text-muted">Total Applications</h6>
+                <h3 className="fw-bold">{totalApplications}</h3>
+                <small className="text-success">+120 Since last month</small>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="card shadow-sm border-0 h-100 d-flex flex-column">
+              <div className="card-body">
+                <h6 className="text-muted">Avg. Time to Hire</h6>
+                <h3 className="fw-bold">22 Days</h3>
+                <small className="text-success">
+                  -3 Days Compared to last quarter
+                </small>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="card shadow-sm border-0 h-100 d-flex flex-column">
+              <div className="card-body">
+                <h6 className="text-muted">Candidates Hired</h6>
+                <h3 className="fw-bold">{candidatesHired}</h3>
+                <small className="text-success">+2 Since last month</small>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-    </div>
+        <div className="row g-4 mb-4">
+          <div className="col-md-6">
+            <div className="card shadow-sm chart-card">
+              <div className="card-body">
+                <h6 className="mb-3">Job Views & Applications Over Time</h6>
+                <canvas id="viewsChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card shadow-sm chart-card">
+              <div className="card-body">
+                <h6 className="mb-3">Application Source Breakdown</h6>
+                <canvas id="sourceChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row g-4 mb-4">
+          <div className="col-md-6">
+            <div className="card shadow-sm chart-card">
+              <div className="card-body">
+                <h6 className="mb-3">Hiring Funnel Conversion</h6>
+                <canvas id="funnelChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card shadow-sm chart-card">
+              <div className="card-body">
+                <h6 className="mb-3">Average Time Per Hiring Stage</h6>
+                <canvas id="timeChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+      </div>
+    </main>
   );
 }
 

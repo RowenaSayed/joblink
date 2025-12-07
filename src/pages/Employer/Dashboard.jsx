@@ -98,7 +98,7 @@ function EmployerDashboard() {
 
           <div className="col-12 py-3 mt-3 text-center">
             <Link
-              to="/analytics"
+              to="analytics"
               className="btn btn-lg px-4 px-md-5 py-2 rounded-5 d-inline-flex align-items-center gap-2 text-white fs-md-3"
               style={{ backgroundColor: "#284c8a" }}
             >
@@ -109,7 +109,7 @@ function EmployerDashboard() {
         </section>
 
         {/* Quick Actions */}
-        <section className="container my-5">
+        <section className="container my-5 bg-transparent">
           <h5 className="fw-bold mb-4 text-light">Quick Actions</h5>
 
           <div className="row g-4">

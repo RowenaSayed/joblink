@@ -281,7 +281,8 @@ export default function PostJob() {
                       type="number"
                       className="form-control"
                       name="salary.min"
-                      value={postJob.salary.min}
+                      value={postJob.salary.min || 100}
+                      min="100"
                       onChange={handleChange}
                     />
                   </div>
@@ -291,7 +292,8 @@ export default function PostJob() {
                       type="number"
                       className="form-control"
                       name="salary.max"
-                      value={postJob.salary.max}
+                      value={postJob.salary.max || 100}
+                      min="100"
                       onChange={handleChange}
                     />
                   </div>
@@ -325,7 +327,7 @@ export default function PostJob() {
             <div className="card mb-4">
               <div className="card-body">
                 <div className="row g-3">
-                  <div  className="visually-hidden col-md-6">
+                  <div className="visually-hidden col-md-6">
                     <label className="form-label">Application Method</label>
                     <select
                       className="form-select"
