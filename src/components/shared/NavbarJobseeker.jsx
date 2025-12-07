@@ -69,16 +69,17 @@ export default function NavbarJobseeker() {
               </NavLink>
             </li>
           </ul>
-          {/* add notification icon and redirect to /notify when on click */}
-          <div className="d-flex align-items-center">
-            <NavLink to="/jobseeker/notify" className="nav-link position-relative">
-              <i className="fa-solid fa-bell fs-5"></i>
-          
-            </NavLink>
-          </div>
         </div>
-
-        <div className="dropdown d-flex align-items-center gap-3 ms-2">
+        {/* add notification icon and redirect to /notify when on click */}
+        <div className="d-flex align-items-center gap-3 mx-auto me-md-3">
+          <NavLink
+            to="/jobseeker/notify"
+            className="nav-link position-relative"
+          >
+            <i className="fa-solid fa-bell fs-5"></i>
+          </NavLink>
+        </div>
+        <div className="dropdown d-flex align-items-center gap-3 mx-auto">
           <button
             className="btn btn-link dropdown-toggle d-flex align-items-center text-decoration-none"
             type="button"
