@@ -7,7 +7,7 @@ export default function EmployerLayout() {
     <>
       <NavbarEmployer />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

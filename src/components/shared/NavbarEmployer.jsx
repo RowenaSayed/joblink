@@ -84,7 +84,7 @@ function NavbarEmployer() {
             aria-expanded="false"
           >
             <img
-              src="https://i.pravatar.cc/40?img=12"
+              src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"
               className="rounded-circle me-2"
               width="36"
               height="36"

@@ -6,8 +6,10 @@ export default function NavbarJobseeker() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    navigate("/");
+    localStorage.removeItem("role");
+    setTimeout(() => {
+      navigate("/");
+    }, 500);
   };
 
   return (
@@ -77,7 +79,7 @@ export default function NavbarJobseeker() {
             aria-expanded="false"
           >
             <img
-              src="https://i.pravatar.cc/40?img=12"
+              src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"
               className="rounded-circle"
               width="36"
               height="36"

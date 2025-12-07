@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import "../../assets/CSS/Search.css";
 
 function CandidateCard({ candidate }) {
   const {
+    _id, 
     name,
     email,
     role,
@@ -25,8 +26,7 @@ function CandidateCard({ candidate }) {
             <img
               src={
                 profileImage ||
-                "https://via.placeholder.com/100/007bff/ffffff?text=" +
-                  name?.charAt(0)
+                "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"
               }
               className="rounded-circle mb-2 border"
               width="100"
@@ -61,7 +61,6 @@ function CandidateCard({ candidate }) {
           </p>
         )}
 
-        {/* Skills Section */}
         <div className="mb-3">
           <h6 className="fw-semibold small mb-2">Skills</h6>
           <div className="d-flex flex-wrap gap-1">
@@ -69,7 +68,7 @@ function CandidateCard({ candidate }) {
               skills.slice(0, 4).map((skill, idx) => (
                 <span
                   key={idx}
-                  className="badge rounded-pill bg-primary bg-opacity-10 text-primary border-0 px-2 py-1"
+                  className="badge rounded-pill bg-primary bg-opacity-10 text-light border-0 px-2 py-1" // Changed text-light to text-primary
                   style={{ fontSize: "0.75rem" }}
                 >
                   {skill}
@@ -122,11 +121,13 @@ function CandidateCard({ candidate }) {
 
         {/* Action Buttons */}
         <div className="mt-auto d-flex justify-content-center gap-2 pt-3">
-          <button className="btn btn-outline-primary btn-sm flex-fill">
+          <Link
+            to={`/candidates/${_id}`} 
+            className="btn btn-outline-primary btn-sm flex-fill"
+          >
             <i className="bi bi-eye me-1"></i>
-            Profile
-          </button>
-         
+            View Profile
+          </Link>
         </div>
       </div>
     </div>
@@ -146,8 +147,6 @@ function EmployerSearchResults() {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(true);
-
-  // Common skills for filter
   const commonSkills = [
     "JavaScript",
     "React",
@@ -166,13 +165,11 @@ function EmployerSearchResults() {
     "Docker",
   ];
 
-  // Fetch candidates using fetch API
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         const token = localStorage.getItem("token");
-        
 
         const response = await fetch(
           "https://joblink-server-app.vercel.app/api/users/all-candidates",
@@ -208,11 +205,9 @@ function EmployerSearchResults() {
     fetchData();
   }, []);
 
-  // Apply filters
   useEffect(() => {
     let filtered = [...candidates];
 
-    // Search Query (searches in name, title, bio, email)
     if (filters.searchQuery) {
       const query = filters.searchQuery.toLowerCase();
       filtered = filtered.filter(
@@ -225,7 +220,6 @@ function EmployerSearchResults() {
       );
     }
 
-    // Skills (all selected skills must be present)
     if (filters.skills.length > 0) {
       filtered = filtered.filter((candidate) =>
         filters.skills.every((skill) =>
@@ -236,7 +230,6 @@ function EmployerSearchResults() {
       );
     }
 
-    // Location
     if (filters.location) {
       filtered = filtered.filter((candidate) =>
         candidate.location

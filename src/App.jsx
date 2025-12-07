@@ -27,6 +27,9 @@ import Job_Seeker_Job_Details from "./pages/jobseeker/Job_Seeker_Job_Details";
 import Job_Seeker_Job_Alerts from "./pages/jobseeker/Job_Seeker_Job_Alerts";
 import Job_Seeker_Saved_Jobs from "./pages/jobseeker/Job_Seeker_Saved_Jobs";
 import ViewCompanyProfile from "./pages/jobseeker/ViewCompanyProfile";
+import ViewJobseekerProfile from "./pages/Employer/ViewJobseekerProfile";
+import Profile from "./pages/jobseeker/Profile";
+// ============================================================
 function App() {
   return (
     <Routes>
@@ -55,6 +58,7 @@ function App() {
         <Route path="/jobs" element={<Jobs />}></Route>
         <Route path="jobs/:id" element={<Job_Seeker_Job_Details />} />
         <Route path="candidates" element={<Search />}></Route>
+        <Route path="candidates/:id" element={<ViewJobseekerProfile />}></Route>
       </Route>
       {/* ===================================== */}
       <Route path="/employer" element={<EmployerLayout />}>
@@ -63,8 +67,10 @@ function App() {
         <Route path="manage-jobs" element={<ManageJobs />}></Route>
         <Route path="post-job" element={<PostJob />}></Route>
         <Route path="candidates" element={<Search />}></Route>
+        <Route path="candidates/:id" element={<ViewJobseekerProfile />}></Route>
         <Route path="profile" element={<Employer_Company_Profile />}></Route>
         <Route path="applicants" element={<Applicants />}></Route>
+
         <Route
           path="interviews"
           element={<EmployerInterviewScheduling />}
@@ -80,6 +86,7 @@ function App() {
         <Route path="apps" element={<Job_Seeker_Applications />}></Route>
         <Route path="saved-jobs" element={<Job_Seeker_Saved_Jobs />}></Route>
         <Route path="alerts" element={<Job_Seeker_Job_Alerts />}></Route>
+        <Route path="profile" element={<Profile />}></Route>
       </Route>
 
       {/* ===================================== */}

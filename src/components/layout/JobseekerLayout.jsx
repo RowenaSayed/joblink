@@ -7,7 +7,7 @@ export default function AuthLayout() {
     <>
       <NavbarJobseeker />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
