@@ -29,6 +29,7 @@ import Job_Seeker_Saved_Jobs from "./pages/jobseeker/Job_Seeker_Saved_Jobs";
 import ViewCompanyProfile from "./pages/jobseeker/ViewCompanyProfile";
 import ViewJobseekerProfile from "./pages/Employer/ViewJobseekerProfile";
 import Profile from "./pages/jobseeker/Profile";
+import Notifications from "./pages/jobseeker/Notfication";
 // ============================================================
 function App() {
   return (
@@ -87,6 +88,7 @@ function App() {
         <Route path="saved-jobs" element={<Job_Seeker_Saved_Jobs />}></Route>
         <Route path="alerts" element={<Job_Seeker_Job_Alerts />}></Route>
         <Route path="profile" element={<Profile />}></Route>
+        <Route path="notify" element={<Notifications />}></Route>
       </Route>
 
       {/* ===================================== */}
