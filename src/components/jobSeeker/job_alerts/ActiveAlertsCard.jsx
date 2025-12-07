@@ -11,10 +11,12 @@ function ActiveAlertsCard({
   const [isDeleting, setIsDeleting] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editFormData, setEditFormData] = useState({
-    keywords: cardTitle.replace(" Alert", "").split(", "),
+    jobTitle: cardTitle.replace(" Alert", ""),
+    keywords: "",
     location: "",
     jobType: "",
-    frequency: "Weekly",
+    minSalary: "",
+    maxSalary: "",
     email_notification: true,
     in_app_notification: true,
   });
@@ -59,11 +61,17 @@ function ActiveAlertsCard({
     }
   };
 
-  const handleEditClick = () => setShowEditModal(true);
+  const handleEditClick = () => {
+    setShowEditModal(true);
+  };
 
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
+      const formData = { ...editFormData };
+      if (formData.minSalary) formData.minSalary = Number(formData.minSalary);
+      if (formData.maxSalary) formData.maxSalary = Number(formData.maxSalary);
+
       const response = await fetch(
         `https://joblink-server-app.vercel.app/api/job-alerts/${cardId}`,
         {
@@ -72,7 +80,7 @@ function ActiveAlertsCard({
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
-          body: JSON.stringify(editFormData),
+          body: JSON.stringify(formData),
         }
       );
       if (response.ok) {
@@ -192,22 +200,24 @@ function ActiveAlertsCard({
             <form onSubmit={handleEditSubmit}>
               <div className="modal-body">
                 <div className="mb-3">
-                  <label className="form-label">
-                    Keywords (comma separated)
-                  </label>
+                  <label className="form-label">Job Title *</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="jobTitle"
+                    value={editFormData.jobTitle}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Keywords *</label>
                   <input
                     type="text"
                     className="form-control"
                     name="keywords"
-                    value={editFormData.keywords.join(", ")}
-                    onChange={(e) =>
-                      setEditFormData((prev) => ({
-                        ...prev,
-                        keywords: e.target.value
-                          .split(",")
-                          .map((k) => k.trim()),
-                      }))
-                    }
+                    value={editFormData.keywords}
+                    onChange={handleInputChange}
                     required
                   />
                 </div>
@@ -232,23 +242,32 @@ function ActiveAlertsCard({
                     <option value="">Select Job Type</option>
                     <option value="Full-time">Full-time</option>
                     <option value="Part-time">Part-time</option>
+                    <option value="Internship">Internship</option>
                     <option value="Contract">Contract</option>
                     <option value="Remote">Remote</option>
                   </select>
                 </div>
-                <div className="mb-3">
-                  <label className="form-label">Frequency</label>
-                  <select
-                    className="form-select"
-                    name="frequency"
-                    value={editFormData.frequency}
-                    onChange={handleInputChange}
-                  >
-                    <option value="Daily">Daily</option>
-                    <option value="Weekly">Weekly</option>
-                    <option value="Bi-weekly">Bi-weekly</option>
-                    <option value="Monthly">Monthly</option>
-                  </select>
+                <div className="row">
+                  <div className="col-md-6 mb-3">
+                    <label className="form-label">Min Salary</label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="minSalary"
+                      value={editFormData.minSalary}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <label className="form-label">Max Salary</label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="maxSalary"
+                      value={editFormData.maxSalary}
+                      onChange={handleInputChange}
+                    />
+                  </div>
                 </div>
                 <div className="mb-3 form-check">
                   <input
