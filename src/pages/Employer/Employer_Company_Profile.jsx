@@ -43,8 +43,10 @@ function Employer_Company_Profile() {
         setUserProfile(userData.user || null);
 
         const companyRes = await fetch(
-          "https://joblink-server-app.vercel.app/api/company/",
-          { headers }
+          "https://joblink-server-app.vercel.app/api/company",
+          {
+            headers,
+          }
         );
         const companyData = await companyRes.json();
         setCompanyInfo(companyData.company || null);
@@ -117,11 +119,14 @@ function Employer_Company_Profile() {
       data.append("description", formData.description);
       if (formData.logo) data.append("logo", formData.logo);
 
-      const res = await fetch("https://joblink-app.vercel.app/api/company", {
-        method: "PATCH",
-        headers: { Authorization: `Bearer ${token}` },
-        body: data,
-      });
+      const res = await fetch(
+        "https://joblink-server-app.vercel.app/api/company",
+        {
+          method: "PATCH",
+          headers: { Authorization: `Bearer ${token}` },
+          body: data,
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to update company");
 
@@ -201,8 +206,8 @@ function Employer_Company_Profile() {
                     formData.logo
                       ? URL.createObjectURL(formData.logo)
                       : companyInfo?.logo
-                      ? `https://joblink-app.vercel.app/uploads/${companyInfo.logo}`
-                      : logo
+                      ? `http://localhost:5000/uploads/${companyInfo.logo}`
+                      : "https://www.shutterstock.com/image-vector/company-icon-vector-isolated-on-600nw-2157172559.jpg"
                   }
                   alt="company logo"
                   style={{

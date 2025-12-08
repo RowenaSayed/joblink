@@ -385,7 +385,7 @@ function EmployerSearchResults() {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="e.g., Cairo, Remote"
+                    placeholder="Cairo, Remote"
                     value={filters.location}
                     onChange={(e) =>
                       setFilters((prev) => ({
@@ -402,7 +402,7 @@ function EmployerSearchResults() {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="e.g., Senior, 2 years"
+                    placeholder="Senior, 2 years"
                     value={filters.experience}
                     onChange={(e) =>
                       setFilters((prev) => ({
@@ -419,7 +419,7 @@ function EmployerSearchResults() {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="e.g., Bachelor, Master"
+                    placeholder="Bachelor, Master"
                     value={filters.education}
                     onChange={(e) =>
                       setFilters((prev) => ({
@@ -430,27 +430,7 @@ function EmployerSearchResults() {
                   />
                 </div>
 
-                {/* Availability */}
-                <div className="mb-4 form-check form-switch">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="availability"
-                    checked={filters.availability}
-                    onChange={(e) =>
-                      setFilters((prev) => ({
-                        ...prev,
-                        availability: e.target.checked,
-                      }))
-                    }
-                  />
-                  <label
-                    className="form-check-label fw-semibold"
-                    htmlFor="availability"
-                  >
-                    Immediately Available
-                  </label>
-                </div>
+               
               </div>
             </div>
 

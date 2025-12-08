@@ -1,11 +1,17 @@
 import "../assets/CSS/LandingPage.css";
 import { useState,useEffect } from "react";
-import{Link} from 'react-router-dom'
+import{Link,useNavigate} from 'react-router-dom'
 
 export default function LandingPage() {
   const [featuredJobs, setFeaturedJobs] = useState([]);
   const [activeGuide, setActiveGuide] = useState("jobseeker");
-
+  const navigate = useNavigate();
+  const [keyword, setKeyword] = useState("");
+  const [locationInput, setLocationInput] = useState("");
+   const handleSearch = (e) => {
+     e.preventDefault();
+     navigate("/jobs", { state: { keyword, location: locationInput } });
+   };
   useEffect(() => {
     const fetchRecentJobs = async () => {
       try {
@@ -103,7 +109,10 @@ export default function LandingPage() {
             </p>
             <div className="row justify-content-center">
               <div className="col-11 col-lg-8 bg-light rounded-3 py-4 px-4 mx-auto">
-                <form className="row g-2 align-items-center">
+                <form
+                  className="row g-2 align-items-center"
+                  onSubmit={handleSearch}
+                >
                   <div className="col-md-5 mb-2 mb-md-0">
                     <div className="input-group">
                       <span className="input-group-text bg-transparent border-end-0">
@@ -113,6 +122,8 @@ export default function LandingPage() {
                         type="text"
                         className="form-control border-start-0"
                         placeholder="Job title, keywords, or company"
+                        value={keyword}
+                        onChange={(e) => setKeyword(e.target.value)}
                       />
                     </div>
                   </div>
@@ -125,11 +136,16 @@ export default function LandingPage() {
                         type="text"
                         className="form-control border-start-0"
                         placeholder="City, state, or remote"
+                        value={locationInput}
+                        onChange={(e) => setLocationInput(e.target.value)}
                       />
                     </div>
                   </div>
                   <div className="col-md-3">
-                    <button className="btn btn-primary-custom w-100">
+                    <button
+                      className="btn btn-primary-custom w-100"
+                      type="submit"
+                    >
                       Search
                     </button>
                   </div>
@@ -423,8 +439,7 @@ export default function LandingPage() {
                           </div>
                         </div>
                       </div>
-                      <div className="text-success">
-                      </div>
+                      <div className="text-success"></div>
                     </div>
                     <div className="d-flex justify-content-between mt-4">
                       <div>
@@ -433,8 +448,8 @@ export default function LandingPage() {
                         </span>
                       </div>
                       <div className="text-success fw-bold">
-                        {job.salary.currency || "USD"}{" "}
-                        {job.salary.min}-{job.salary.max}
+                        {job.salary.currency || "USD"} {job.salary.min}-
+                        {job.salary.max}
                       </div>
                     </div>
                   </div>
