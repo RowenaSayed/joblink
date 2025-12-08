@@ -238,7 +238,7 @@ function JobCard({ job, navigate }) {
         </span>
         <button
           className="btn btn-primary btn-sm"
-          onClick={() => navigate(`/jobs/${job._id}`)}
+          onClick={() => navigate(`jobs/${job._id}`)}
         >
           View
         </button>
