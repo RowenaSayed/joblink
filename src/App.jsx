@@ -7,7 +7,7 @@ import AdminLayout from "./components/layout/AdminLayout";
 import JobseekerLayout from "./components/layout/JobseekerLayout";
 //============================================================
 import Admin_Jobs_Management from "./pages/Admin/Admin_Jobs_Management";
-import User_management from "./pages/Admin/user_management";
+import UserManagement from "./pages/Admin/UserManagement";
 import Admin from "./pages/Admin/AdminDashboard";
 // --------------------------------------------------------
 // ============================================================
@@ -99,7 +99,7 @@ function App() {
 
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="jobs" element={<Admin_Jobs_Management />}></Route>
-        <Route path="users" element={<User_management />}></Route>
+        <Route path="users" element={<UserManagement />}></Route>
         <Route path="dashboard" element={<Admin />}></Route>
       </Route>
     </Routes>
