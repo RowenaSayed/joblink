@@ -56,7 +56,7 @@ function App() {
           )
         }
       />
-      <Route element={<ViewCompanyProfile />} path="/company/:id"></Route>
+
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignupJobseeker />}></Route>
@@ -64,6 +64,10 @@ function App() {
         <Route path="jobs/:id" element={<Job_Seeker_Job_Details />} />
         <Route path="candidates" element={<Search />}></Route>
         <Route path="candidates/:id" element={<ViewJobseekerProfile />}></Route>
+        <Route
+          element={<ViewCompanyProfile />}
+          path="company/:companyId"
+        ></Route>
       </Route>
       {/* ===================================== */}
       <Route path="/employer" element={<EmployerLayout />}>
@@ -93,6 +97,10 @@ function App() {
         <Route path="alerts" element={<Job_Seeker_Job_Alerts />}></Route>
         <Route path="profile" element={<Profile />}></Route>
         <Route path="notify" element={<Notifications />}></Route>
+        <Route
+          element={<ViewCompanyProfile />}
+          path="company/:companyId"
+        ></Route>
       </Route>
 
       {/* ===================================== */}

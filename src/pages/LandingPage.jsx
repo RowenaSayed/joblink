@@ -423,14 +423,16 @@ export default function LandingPage() {
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="d-flex align-items-center">
                         <div className="company-logo me-3">
-                          <img
-                            src={
-                              "https://www.shutterstock.com/image-vector/company-icon-vector-isolated-on-600nw-2157172559.jpg"
-                            }
-                            alt={`${job.company.name} Logo`}
-                            style={{ height: "60px", width: "60px" }}
-                            className="rounded"
-                          />
+                          <Link to={`/company/${job.company._id}`}>
+                            <img
+                              src={
+                                "https://www.shutterstock.com/image-vector/company-icon-vector-isolated-on-600nw-2157172559.jpg"
+                              }
+                              alt={`${job.company.name} Logo`}
+                              style={{ height: "60px", width: "60px" }}
+                              className="rounded"
+                            />
+                          </Link>
                         </div>
                         <div>
                           <h5 className="mb-0">{job.title}</h5>

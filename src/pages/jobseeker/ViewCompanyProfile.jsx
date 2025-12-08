@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function ViewCompanyProfile() {
   const [company, setCompany] = useState(null);
 
+  const { companyId } = useParams();
   useEffect(() => {
-    const companyId = "692a5418d580651b42437e78";
     fetch(`https://joblink-server-app.vercel.app/api/company/${companyId}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -41,7 +42,9 @@ export default function ViewCompanyProfile() {
                   <div className="position-relative">
                     <img
                       className="logo rounded shadow-sm"
-                      src={company.logo}
+                      src={ `http://localhost:5000/uploads/${company.logo}`
+                         ||"https://www.shutterstock.com/image-vector/company-icon-vector-isolated-on-600nw-2157172559.jpg"
+                      }
                       alt="company logo"
                       style={{
                         width: "100px",
