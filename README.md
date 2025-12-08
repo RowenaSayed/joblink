@@ -87,6 +87,7 @@ git clone https://github.com/RawanAbulmaaref/frontend-project.git
 
 # 2. Navigate to project folder
 cd frontend-project
-
-
->>>>>>> b9dbdb787e036fb122a707b55e02dd42145854de
+npm install
+npm run dev
+ىح
+ىح
