@@ -41,7 +41,6 @@ function Job_Seeker_Applications() {
     fetchApplications();
   }, []);
 
-  // فلترة التطبيقات بناءً على الحالة
   const filteredApps = applications.filter((app) => {
     if (filter === "all") return true;
     return app.status?.toLowerCase() === filter.toLowerCase();
