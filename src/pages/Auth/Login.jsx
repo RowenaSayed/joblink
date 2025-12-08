@@ -40,7 +40,7 @@ const handleSubmit = async (e) => {
       } else if (role == 'employer') {
         setTimeout(() => navigate("/employer/dashboard"), 1500);
       } else {
-        setTimeout(() => navigate("/"), 1500);
+        setTimeout(() => navigate("/admin/dashboard"), 1500);
       }
     } else {
       setMsg(data.message || data.error);
