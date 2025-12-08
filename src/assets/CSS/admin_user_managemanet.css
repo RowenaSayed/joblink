@@ -1,0 +1,64 @@
+
+.admins-jobs-managment-container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 95%;
+    padding: 0 15px;
+}
+
+
+.jobs-btn:hover {
+    transition: 0.3s;
+    background-color: #284c8a !important;
+    color: white;
+}
+
+
+
+.red-background {
+    background-color: red;
+}
+
+
+.btn-job-active {
+    background-color: #284c8a !important;
+    color: white;
+}
+@media (min-width: 1150px) {
+    .jobs-status {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+.modern-shadow {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: #fff;
+}
+@media (max-width: 768px) {
+ .email,.role{
+    display: none;
+ }
+ .jobs-btn{
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+ }
+}
+
+/*medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*large */
+@media (min-width: 1200px) {
+    .name,.email.status,.action,.role{
+        width: 18%;
+        text-align: center !important;
+    }
+    .action{
+        width: 28%;
+    }
+}

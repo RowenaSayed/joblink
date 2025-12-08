@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
-import NavbarMain from "../shared/NavbarMain";
+import NavbarAdmin from "../shared/NavbarAdmin";
 import FooterAuth from "../shared/FooterAuth";
 
-export default function AuthLayout() {
+export default function AdminLayout() {
   return (
     <>
-      <NavbarMain />
+      <NavbarAdmin />
       <Outlet />
-      <FooterAuth />
+      {/* <FooterAuth /> */}
     </>
   );
 }

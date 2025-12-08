@@ -8,7 +8,7 @@ export default function NavbarJobseeker() {
     localStorage.removeItem("token");
     localStorage.removeItem("role");
     setTimeout(() => {
-      navigate("/");
+      navigate("/login");
     }, 500);
   };
 
