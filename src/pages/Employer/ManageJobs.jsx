@@ -77,7 +77,7 @@ export default function ManageJobs() {
 
   const confirmDelete = async () => {
     try {
-      await fetch(`https://joblink-server-app.vercel.app/api/jobs/${selectedJob._id}/delete`, {
+      await fetch(`https://joblink-server-app.vercel.app/api/jobs/${selectedJob._id}/`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

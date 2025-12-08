@@ -409,8 +409,7 @@ export default function LandingPage() {
                         <div className="company-logo me-3">
                           <img
                             src={
-                              job.company.logo ||
-                              "https://via.placeholder.com/60"
+                              "https://www.shutterstock.com/image-vector/company-icon-vector-isolated-on-600nw-2157172559.jpg"
                             }
                             alt={`${job.company.name} Logo`}
                             style={{ height: "60px", width: "60px" }}
@@ -425,7 +424,6 @@ export default function LandingPage() {
                         </div>
                       </div>
                       <div className="text-success">
-                        <i className="fas fa-bookmark"></i>
                       </div>
                     </div>
                     <div className="d-flex justify-content-between mt-4">
@@ -436,7 +434,7 @@ export default function LandingPage() {
                       </div>
                       <div className="text-success fw-bold">
                         {job.salary.currency || "USD"}{" "}
-                        {job.salary.amount || "N/A"}
+                        {job.salary.min}-{job.salary.max}
                       </div>
                     </div>
                   </div>

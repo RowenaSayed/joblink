@@ -74,6 +74,7 @@ export default function Jobs() {
         (job.skills?.join(" ") || "") +
         (job.tags?.join(" ") || "")
       ).toLowerCase();
+      // console.log(job.company.logo)
 
       return (
         (!filters.keyword || txt.includes(filters.keyword.toLowerCase())) &&
@@ -87,6 +88,7 @@ export default function Jobs() {
     });
 
     setFiltered(f);
+  
   }, [filters, jobs]);
 
   // ---------------- Dynamic Filter Options ----------------
@@ -147,6 +149,7 @@ export default function Jobs() {
               <div className="col-12" key={job._id}>
                 <JobCard job={job} navigate={navigate} />
               </div>
+              
             ))}
             {!filtered.length && (
               <div className="text-center py-5">
@@ -192,7 +195,7 @@ function JobCard({ job, navigate }) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ jobId: job._id }),
+        body: JSON.stringify({ job: job._id }),
       });
       const data = await res.json();
       alert(data.message || "Saved!");
@@ -205,18 +208,40 @@ function JobCard({ job, navigate }) {
     <div className="card p-3 rounded-4 shadow-sm">
       <div className="d-flex justify-content-between">
         <div className="d-flex gap-3">
-          <img src={job.company?.logo || "/default-company.jpg"} className="rounded-circle" style={{ width: 45, height: 45, objectFit: "cover" }} alt="" />
+          <img
+            src={
+              // job.company?.logo ||
+              "https://www.shutterstock.com/image-vector/company-icon-vector-isolated-on-600nw-2157172559.jpg"
+            }
+            className="rounded-circle"
+            style={{ width: 45, height: 45, objectFit: "cover" }}
+            alt=""
+          />
           <div>
             <h5 className="mb-1">{job.title}</h5>
-            <p className="text-muted small mb-0">{job.company?.name} • {job.type}</p>
+            <p className="text-muted small mb-0">
+              {job.company?.name} • {job.type}
+            </p>
           </div>
         </div>
-        <i className="fa-regular fa-heart fs-4 text-danger" style={{ cursor: "pointer" }} onClick={save}></i>
+        <i
+          className="fa-regular fa-heart fs-4 text-danger"
+          style={{ cursor: "pointer" }}
+          onClick={save}
+        ></i>
       </div>
       <p className="mt-3 text-secondary">{job.description}</p>
       <div className="d-flex justify-content-between">
-        <span className="text-muted small">${job.salary?.min} – ${job.salary?.max} {job.salary?.currency || "USD"} • {job.location}</span>
-        <button className="btn btn-primary btn-sm" onClick={() => navigate(`/jobs/${job._id}`)}>View</button>
+        <span className="text-muted small">
+          ${job.salary?.min} – ${job.salary?.max}{" "}
+          {job.salary?.currency || "USD"} • {job.location}
+        </span>
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={() => navigate(`/jobs/${job._id}`)}
+        >
+          View
+        </button>
       </div>
     </div>
   );

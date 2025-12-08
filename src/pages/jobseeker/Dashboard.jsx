@@ -156,9 +156,8 @@ function Dashboard() {
                         >
                           <img
                             src={
-                              job.company?.logo ||
-                              job.img ||
-                              "/default-company.jpg"
+                              
+                              "https://www.shutterstock.com/image-vector/company-icon-vector-isolated-on-600nw-2157172559.jpg"
                             }
                             alt="Company Logo"
                             style={{

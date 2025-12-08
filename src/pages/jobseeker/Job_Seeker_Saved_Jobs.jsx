@@ -14,7 +14,7 @@ function Job_Seeker_Saved_Jobs() {
 
   const fetchSavedJobs = async () => {
     try {
-      const response = await fetch("https://joblink-server-app.vercel.app/api/saved/all", {
+      const response = await fetch("https://joblink-server-app.vercel.app/api/saved/all/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
