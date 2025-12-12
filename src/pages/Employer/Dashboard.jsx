@@ -122,7 +122,7 @@ function EmployerDashboard() {
                 <p className="text-muted small mb-4">
                   Attract top talent with a new job listing.
                 </p>
-                <Link to="/post-job" className="btn btn-outline-primary px-4">
+                <Link to="/employer/post-job" className="btn btn-outline-primary px-4">
                   Post Job
                 </Link>
               </div>
@@ -137,7 +137,7 @@ function EmployerDashboard() {
                 <p className="text-muted small mb-4">
                   View and manage all applications received.
                 </p>
-                <Link className="btn btn-outline-secondary px-4">
+                <Link to='/employer/applicants' className="btn btn-outline-secondary px-4">
                   View Applicants
                 </Link>
               </div>
@@ -146,7 +146,7 @@ function EmployerDashboard() {
         </section>
 
         {/* Job Listings */}
-        <section className="container-fluid mt-5 bg-light py-3 px-md-0 px-4 py-md-5 rounded-top-2">
+        <section className="container-fluid mt-5 bg-white py-3 px-md-0 px-4 py-md-5 rounded-top-2">
           <h5 className="fw-bold mb-4 container text-dark">
             Your Recent Job Postings
           </h5>
@@ -214,7 +214,7 @@ function EmployerDashboard() {
               ))}
 
               <div className="px-3 mt-3">
-                <Link to="/manage-jobs" className="text-primary">
+                <Link to="/employer/manage-jobs" className="text-primary">
                   Show more...
                 </Link>
               </div>
