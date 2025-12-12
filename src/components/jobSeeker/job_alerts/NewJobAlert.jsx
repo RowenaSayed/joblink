@@ -5,7 +5,7 @@ function NewJobAlert() {
     keywords: "",
     jobTitle: "",
     location: "",
-    jobType: "Full Time",
+    jobType: "Full-time",
     minSalary: "",
     maxSalary: "",
     frequency: "Daily",
@@ -18,32 +18,19 @@ function NewJobAlert() {
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
-
     if (type === "checkbox") {
-      setFormData({
-        ...formData,
-        [name]: checked,
-      });
+      setFormData({ ...formData, [name]: checked });
     } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
+      setFormData({ ...formData, [name]: value });
     }
   };
 
   const handleJobTypeChange = (type) => {
-    setFormData({
-      ...formData,
-      jobType: type,
-    });
+    setFormData({ ...formData, jobType: type });
   };
 
   const handleFrequencyChange = (freq) => {
-    setFormData({
-      ...formData,
-      frequency: freq,
-    });
+    setFormData({ ...formData, frequency: freq });
   };
 
   const handleSubmit = async (e) => {
@@ -52,39 +39,35 @@ function NewJobAlert() {
     setMessage({ type: "", text: "" });
 
     try {
-      // Prepare data for API
       const alertData = {
         ...formData,
         minSalary: formData.minSalary ? parseInt(formData.minSalary) : 0,
         maxSalary: formData.maxSalary ? parseInt(formData.maxSalary) : 0,
       };
 
-      // Get token from localStorage (adjust according to your auth setup)
       const token = localStorage.getItem("token");
 
-      const response = await fetch("https://joblink-server-app.vercel.app/api/job-alerts/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(alertData),
-      });
+      const response = await fetch(
+        "https://joblink-server-app.vercel.app/api/job-alerts/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(alertData),
+        }
+      );
 
       const data = await response.json();
 
       if (response.ok) {
-        setMessage({
-          type: "success",
-          text: "Job alert created successfully!",
-        });
-
-        // Reset form
+        setMessage({ type: "success", text: "Job alert created successfully!" });
         setFormData({
           keywords: "",
           jobTitle: "",
           location: "",
-          jobType: "Full Time",
+          jobType: "Full-time",
           minSalary: "",
           maxSalary: "",
           frequency: "Daily",
@@ -98,7 +81,6 @@ function NewJobAlert() {
         });
       }
     } catch (error) {
-      console.error("Error:", error);
       setMessage({
         type: "error",
         text: "An error occurred. Please try again.",
@@ -109,24 +91,16 @@ function NewJobAlert() {
   };
 
   return (
-    <div
-      className="border border-secondary-subtle p-4"
-      style={{ borderRadius: "15px" }}
-    >
+    <div className="border border-secondary-subtle p-4" style={{ borderRadius: "15px" }}>
       <div>
         <h5 style={{ fontWeight: 700 }}>Create a New Job Alert</h5>
         <p className="text-secondary">
-          Define your preferences to receive notifications for new job
-          opportunities.
+          Define your preferences to receive notifications for new job opportunities.
         </p>
       </div>
 
       {message.text && (
-        <div
-          className={`alert alert-${
-            message.type === "success" ? "success" : "danger"
-          } mt-3`}
-        >
+        <div className={`alert alert-${message.type === "success" ? "success" : "danger"} mt-3`}>
           {message.text}
         </div>
       )}
@@ -134,9 +108,7 @@ function NewJobAlert() {
       <form onSubmit={handleSubmit}>
         <div className="d-flex flex-wrap">
           <div className="mb-3 mx-lg-3 mx-md-auto" style={{ width: "350px" }}>
-            <label htmlFor="keywords" className="form-label">
-              Keywords
-            </label>
+            <label htmlFor="keywords" className="form-label">Keywords</label>
             <input
               type="text"
               className="form-control"
@@ -144,14 +116,12 @@ function NewJobAlert() {
               name="keywords"
               value={formData.keywords}
               onChange={handleInputChange}
-              placeholder="e.g., Software Engineer, Frontend"
+              placeholder=" Software Engineer, Frontend"
             />
           </div>
 
           <div className="mb-3 mx-lg-3 mx-md-auto" style={{ width: "350px" }}>
-            <label htmlFor="jobTitle" className="form-label">
-              Job Title (Optional)
-            </label>
+            <label htmlFor="jobTitle" className="form-label">Job Title (Optional)</label>
             <input
               type="text"
               className="form-control"
@@ -159,14 +129,12 @@ function NewJobAlert() {
               name="jobTitle"
               value={formData.jobTitle}
               onChange={handleInputChange}
-              placeholder="e.g., Senior Developer"
+              placeholder=" Senior Developer"
             />
           </div>
 
           <div className="mb-3 mx-lg-3 mx-md-auto" style={{ width: "350px" }}>
-            <label htmlFor="location" className="form-label">
-              Location
-            </label>
+            <label htmlFor="location" className="form-label">Location</label>
             <input
               type="text"
               className="form-control"
@@ -174,50 +142,39 @@ function NewJobAlert() {
               name="location"
               value={formData.location}
               onChange={handleInputChange}
-              placeholder="e.g., Remote, New York"
+              placeholder=" Remote, New York"
             />
           </div>
 
-          <div
-            className="mb-3 mx-lg-3 mx-md-auto d-flex flex-column"
-            style={{ width: "350px" }}
-          >
+          <div className="mb-3 mx-lg-3 mx-md-auto d-flex flex-column" style={{ width: "350px" }}>
             <label className="form-label">Job Type</label>
-            <div
-              className="btn-group border border-secondary-subtle"
-              style={{ borderRadius: "5px" }}
-            >
+            <div className="btn-group border border-secondary-subtle" style={{ borderRadius: "5px" }}>
               <button
                 className="btn dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="true"
-                aria-expanded="false"
               >
                 {formData.jobType}
               </button>
               <ul className="dropdown-menu w-100 p-0">
-                {["Full Time", "Part Time", "Internship", "Contract"].map(
-                  (type) => (
-                    <li key={type} className="p-1">
-                      <button
-                        type="button"
-                        className="dropdown-item text-center w-100"
-                        onClick={() => handleJobTypeChange(type)}
-                      >
-                        {type}
-                      </button>
-                    </li>
-                  )
-                )}
+                {["Full-time", "Part-time", "Internship", "Contract", "Remote"].map((type) => (
+                  <li key={type} className="p-1">
+                    <button
+                      type="button"
+                      className="dropdown-item text-center w-100"
+                      onClick={() => handleJobTypeChange(type)}
+                    >
+                      {type}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
           <div className="mb-3 mx-lg-3 mx-md-auto" style={{ width: "350px" }}>
-            <label htmlFor="minSalary" className="form-label">
-              Minimum Salary ($)
-            </label>
+            <label htmlFor="minSalary" className="form-label">Minimum Salary ($)</label>
             <input
               type="number"
               className="form-control"
@@ -225,14 +182,12 @@ function NewJobAlert() {
               name="minSalary"
               value={formData.minSalary}
               onChange={handleInputChange}
-              placeholder="e.g., 50000"
+              placeholder=" 50000"
             />
           </div>
 
           <div className="mb-3 mx-lg-3 mx-md-auto" style={{ width: "350px" }}>
-            <label htmlFor="maxSalary" className="form-label">
-              Maximum Salary ($)
-            </label>
+            <label htmlFor="maxSalary" className="form-label">Maximum Salary ($)</label>
             <input
               type="number"
               className="form-control"
@@ -240,30 +195,23 @@ function NewJobAlert() {
               name="maxSalary"
               value={formData.maxSalary}
               onChange={handleInputChange}
-              placeholder="e.g., 100000"
+              placeholder=" 100000"
             />
           </div>
 
-          <div
-            className="mb-3 mx-lg-3 mx-md-auto d-flex flex-column"
-            style={{ width: "350px" }}
-          >
+          <div className="mb-3 mx-lg-3 mx-md-auto d-flex flex-column" style={{ width: "350px" }}>
             <label className="form-label">Alert Frequency</label>
-            <div
-              className="btn-group border border-secondary-subtle"
-              style={{ borderRadius: "5px" }}
-            >
+            <div className="btn-group border border-secondary-subtle" style={{ borderRadius: "5px" }}>
               <button
                 className="btn dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="true"
-                aria-expanded="false"
               >
                 {formData.frequency}
               </button>
               <ul className="dropdown-menu w-100 p-0">
-                {["Daily", "Weekly", "Monthly", "Yearly"].map((freq) => (
+                {["Daily", "Weekly", "Monthly"].map((freq) => (
                   <li key={freq} className="p-1">
                     <button
                       type="button"
@@ -292,17 +240,13 @@ function NewJobAlert() {
                   name="email_notification"
                   checked={formData.email_notification}
                   onChange={handleInputChange}
-                  style={{ fontSize: "20px" }}
                 />
-                <label
-                  className="form-check-label"
-                  htmlFor="emailNotification"
-                  style={{ fontWeight: "700" }}
-                >
+                <label className="form-check-label" htmlFor="emailNotification" style={{ fontWeight: "700" }}>
                   Email Notifications
                 </label>
               </div>
             </div>
+
             <div className="d-flex">
               <div className="form-check form-switch">
                 <input
@@ -313,13 +257,8 @@ function NewJobAlert() {
                   name="in_app_notification"
                   checked={formData.in_app_notification}
                   onChange={handleInputChange}
-                  style={{ fontSize: "20px" }}
                 />
-                <label
-                  className="form-check-label"
-                  htmlFor="inAppNotification"
-                  style={{ fontWeight: "700" }}
-                >
+                <label className="form-check-label" htmlFor="inAppNotification" style={{ fontWeight: "700" }}>
                   In-App Notifications
                 </label>
               </div>
@@ -336,11 +275,7 @@ function NewJobAlert() {
           >
             {loading ? (
               <>
-                <span
-                  className="spinner-border spinner-border-sm me-2"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
+                <span className="spinner-border spinner-border-sm me-2"></span>
                 Creating...
               </>
             ) : (
