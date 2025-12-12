@@ -35,7 +35,7 @@ function Applicants() {
 
       const mappedApplicants = data.applications.map((app) => {
         const cleanName = app.applicant.name.replace(/\s+/g, "").toLowerCase();
-        const randomImg = `https://i.pravatar.cc/40?u=${cleanName}`;
+        const randomImg = `https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg`;
 
         return {
           id: app._id,
@@ -276,7 +276,7 @@ function Applicants() {
 
                     <td>
                       <div className="d-flex gap-2">
-<Link to={`/employer/candidate/${applicant.AppId}`}
+<Link to={`/employer/candidates/${applicant.AppId}`}
                           className="btn btn-outline-primary btn-sm"
                           
                           style={{ borderRadius: "6px", fontSize: "13px" }}
