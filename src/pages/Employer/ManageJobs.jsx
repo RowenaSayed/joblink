@@ -136,7 +136,7 @@ export default function ManageJobs() {
   if (loading) return <p className="text-center mt-5">Loading jobs...</p>;
 
   return (
-    <section className="container-fluid bg-light py-3 mb-5">
+    <section className="container-fluid bg-white py-3 mb-5">
       <h5 className="fw-bold mb-3 container text-dark">Manage Job Listings</h5>
 
       <div className="row">
