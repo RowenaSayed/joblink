@@ -191,7 +191,7 @@ function Dashboard() {
 
                       <button
                         className="btn btn-primary btn-sm"
-                        onClick={() => navigate(`/job/${job._id}`)}
+                        onClick={() => navigate(`/jobseeker/jobs/${job._id}`)}
                       >
                         View Details
                       </button>
