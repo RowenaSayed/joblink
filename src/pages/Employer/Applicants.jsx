@@ -120,6 +120,7 @@ function Applicants() {
     Shortlisted: { background: "#e3eaff", color: "#3258c5" },
     Rejected: { background: "#ffe5e5", color: "#d63031" },
     Interviewing: { background: "#e6ffe6", color: "#2e8b57" },
+    Approved: { background: "#e6ffe6", color: "#2e8b57" },
   };
 
   const handleClearFilters = () => {
@@ -153,6 +154,7 @@ function Applicants() {
               <option value="Applied">Applied</option>
               <option value="Pending">Pending</option>
               <option value="Rejected">Rejected</option>
+              <option value="Approved">Approved</option>
             </select>
           </div>
 
