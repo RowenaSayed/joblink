@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Applicants() {
@@ -38,6 +40,7 @@ function Applicants() {
         return {
           id: app._id,
           name: app.applicant.name,
+          AppId: app.applicant._id,
           role: app.job.title,
           date: new Date(app.createdAt).toLocaleDateString("en-US", {
             month: "short",
@@ -273,13 +276,13 @@ function Applicants() {
 
                     <td>
                       <div className="d-flex gap-2">
-                        <button
+<Link to={`/employer/candidate/${applicant.AppId}`}
                           className="btn btn-outline-primary btn-sm"
-                          onClick={() => viewProfile(applicant)}
+                          
                           style={{ borderRadius: "6px", fontSize: "13px" }}
                         >
                           View
-                        </button>
+                        </Link>
 
                         <select
                           className="form-select"
@@ -297,6 +300,7 @@ function Applicants() {
                           <option value="Applied">Applied</option>
                           <option value="Pending">Pending</option>
                           <option value="Rejected">Rejected</option>
+                          <option value="Approved">Approved</option>
                         </select>
                       </div>
                     </td>
