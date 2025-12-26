@@ -77,16 +77,3 @@ Includes job search, applications, candidate management, analytics, notification
   <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
 </p>
 
----
-
-## Clone & Setup
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/RawanAbulmaaref/frontend-project.git
-
-# 2. Navigate to project folder
-cd frontend-project
-
-ىح
-ىح
